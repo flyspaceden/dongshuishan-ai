@@ -4,7 +4,7 @@ import {
   Leaf, Mountain, Droplets, Play, Database, Phone, Mail, MapPin, 
   Clock, CheckCircle, HeartPulse, GraduationCap, ShieldCheck, Award, Building2, 
   Microscope, ChevronRight, Stethoscope, Sun, Coffee, BookOpen, Wifi,
-  ArrowLeft, ChevronDown, Monitor, UserCheck
+  ArrowLeft, ChevronDown, Monitor, UserCheck, Quote // Added Quote icon
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -147,7 +147,7 @@ const BackButton = ({ onClick }) => (
   </button>
 );
 
-// --- 3. 核心业务详情页 (Rich Content) ---
+// --- 3. 核心页面组件 ---
 
 // [详情页 1] VR心理疗愈
 const VRHealingPage = ({ navigate }) => (
@@ -287,27 +287,21 @@ const GlobalStudyPage = ({ navigate }) => (
           <section>
             <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"><BookOpen className="text-orange-500"/> 分级研学课程体系</h3>
             <div className="space-y-6">
-              <div className="flex gap-6 items-start p-6 bg-white rounded-2xl border border-slate-100">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold flex-shrink-0">K12</div>
-                <div>
-                  <h4 className="font-bold text-lg text-slate-800 mb-2">中小学：自然与人文的启蒙</h4>
-                  <ul className="space-y-2 text-slate-600 text-sm">
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div> <strong>非遗造纸课：</strong> 亲手体验300年历史的古法造纸技艺，亲手制作一张“东水纸”。</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div> <strong>茶文化溯源：</strong> 采茶、制茶，学习中国传统茶礼与东水山茶史。</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div> <strong>生态观察：</strong> 森林负氧离子监测与植物多样性考察。</li>
-                  </ul>
-                </div>
+              <div className="bg-orange-50 p-6 rounded-2xl border border-orange-100">
+                <h4 className="font-bold text-lg text-orange-800 mb-2">K12 基础教育 (小学/初中)</h4>
+                <ul className="list-disc list-inside text-slate-700 space-y-2 text-sm">
+                  <li><strong>自然生态课：</strong> 东水山动植物考察，负氧离子与环境监测实验。</li>
+                  <li><strong>非遗文化课：</strong> 体验300年历史的古法造纸技艺，亲手制作一张“东水纸”。</li>
+                  <li><strong>茶文化课：</strong> 采茶制茶体验，学习中国传统茶礼。</li>
+                </ul>
               </div>
-              <div className="flex gap-6 items-start p-6 bg-white rounded-2xl border border-slate-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold flex-shrink-0">高校</div>
-                <div>
-                  <h4 className="font-bold text-lg text-slate-800 mb-2">高等教育：前沿科技实践</h4>
-                  <ul className="space-y-2 text-slate-600 text-sm">
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div> <strong>合成生物学：</strong> 氨基酸水溶肥对茶叶品质影响的对照实验。</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div> <strong>AI 智慧农业：</strong> 学习部署物联网传感器与训练作物生长模型。</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div> <strong>区块链应用：</strong> 农产品溯源系统的数据上链实操。</li>
-                  </ul>
-                </div>
+              <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                <h4 className="font-bold text-lg text-blue-800 mb-2">高等教育与科研 (高中/高校)</h4>
+                <ul className="list-disc list-inside text-slate-700 space-y-2 text-sm">
+                  <li><strong>合成生物学工作坊：</strong> 氨基酸水溶肥对茶叶品质影响的对照实验。</li>
+                  <li><strong>智慧农业实践：</strong> AI物联网设备部署与数据采集分析。</li>
+                  <li><strong>区块链溯源技术：</strong> 学习如何将农产品数据上链，构建信任机制。</li>
+                </ul>
               </div>
             </div>
           </section>
@@ -665,11 +659,51 @@ const HomePage = ({ navigate }) => {
   );
 };
 
+// 董事长致辞板块 (NEW SECTION)
+const ChairmanMessageSection = () => (
+  <div className="mb-20">
+    <div className="relative bg-emerald-900 rounded-3xl p-8 md:p-12 overflow-hidden text-white shadow-2xl">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+         <div className="absolute right-0 top-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+         <div className="absolute left-0 bottom-0 w-64 h-64 bg-emerald-400 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-start">
+          {/* Left: Title & Intro */}
+          <div className="lg:w-1/3">
+              <div className="w-16 h-1 bg-emerald-400 mb-6"></div>
+              <h3 className="text-3xl md:text-4xl font-bold leading-tight mb-4">董事长致辞</h3>
+              <h3 className="text-3xl md:text-4xl font-bold leading-tight mb-4">致各界朋友：<br/>共赴科技赋能乡村的生态之约</h3>
+              <p className="text-emerald-200 text-sm tracking-widest uppercase">Chairman's Message</p>
+              <div className="mt-8">
+                 <Quote className="text-emerald-500/30 w-20 h-20" />
+              </div>
+          </div>
+
+          {/* Right: Body Text */}
+          <div className="lg:w-2/3 space-y-6 text-emerald-50 leading-relaxed font-light text-justify">
+              <p>亲爱的访客朋友们：</p>
+              <p>欢迎走进广东东水山 AI 康养生态谷！当富硒茶山邂逅前沿科技，当非遗文脉交融国际视野，我们正以 “技术融合、业态创新、区域赋能” 为初心，勾勒乡村振兴的新图景。</p>
+              <p>依托东水山 5000 亩优质茶园与政策红利，我们构建 “AI + 合成生物 + 区块链 + VR” 全链条体系：智慧种植让茶叶品质提质增效，溯源技术守护消费信任，VR 疗愈传递生态康养温度，国际研学搭建文化交流桥梁。每一项技术落地，都旨在实现 “产业兴、百姓富、生态美” 的共赢 —— 带动农户年均增收，创造就业岗位，打造零碳发展标杆。</p>
+              <p>初心如磐，笃行致远。我们期待以 “竹韵茶香・东隐共生” 为纽带，与合作伙伴携手深耕，让东水山成为湾区文旅名片、乡村振兴典范。诚邀您共赴这场科技与生态的约会，共绘产业繁荣、民生幸福的美好蓝图！</p>
+              
+              <div className="pt-8 flex flex-col items-end">
+                  <div className="text-xl font-bold text-white mb-1">谢志忠</div>
+                  <div className="text-sm text-emerald-300 mb-2">广东东水山 AI 康养生态谷有限公司董事长</div>
+                  <div className="text-xs text-emerald-400/60 font-mono">二〇二五年十一月二十日</div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+);
+
 const AboutPage = ({ navigate }) => (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pt-32 pb-20 bg-slate-50 min-h-screen">
     <div className="container mx-auto px-6">
       <SectionHeader title="关于东水山生态谷" subtitle="ABOUT GROUP" />
-      <div className="bg-white rounded-3xl p-12 shadow-sm mb-16 flex flex-col md:flex-row gap-12 items-center">
+      <div className="bg-white rounded-3xl p-12 shadow-sm mb-20 flex flex-col md:flex-row gap-12 items-center">
         <div className="md:w-1/2">
           <h3 className="text-2xl font-bold text-slate-900 mb-6">四维驱动 · 定义未来康养</h3>
           <p className="text-slate-600 mb-6 leading-loose text-justify">
@@ -691,6 +725,10 @@ const AboutPage = ({ navigate }) => (
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Team Meeting" className="rounded-2xl shadow-xl relative z-10" />
         </div>
       </div>
+
+      {/* Chairman Message Section */}
+      <ChairmanMessageSection />
+
       <div className="mb-10">
         <h3 className="text-2xl font-bold text-center mb-12">三年战略规划</h3>
         <div className="grid md:grid-cols-3 gap-8">
@@ -777,7 +815,7 @@ const EcologyPage = () => (
       <SectionHeader title="东水山国家森林公园" subtitle="ECOLOGICAL BASE" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[500px] mb-16">
         <div className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1596326268056-b04095493721?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tea" />
+          <img src="https://images.unsplash.com/photo-1596326268056-b04094593721?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tea" />
           <div className="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/80 to-transparent w-full">
             <h3 className="text-2xl font-bold text-white">5000亩高山富硒茶园</h3>
             <p className="text-emerald-300">广东十大名茶产地 · 天然含硒量0.3-0.5mg/kg</p>
