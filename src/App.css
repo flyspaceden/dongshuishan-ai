@@ -1,0 +1,24 @@
+/* 我们主要使用 Tailwind CSS 进行样式设计。
+  此文件保留用于可能的全局自定义样式覆盖，
+  目前保持清空或极简，以避免与 Tailwind 冲突。
+*/
+
+:root {
+  /* 可以在这里定义全局 CSS 变量，虽然 Tailwind 也有自己的 config */
+}
+
+body {
+  /* 确保没有默认的 margin/padding 干扰 */
+  margin: 0;
+  padding: 0;
+  /* 启用平滑滚动 */
+  scroll-behavior: smooth;
+}
+
+/* 如果您发现某些 Lucide 图标没有正确对齐，
+  可以在这里添加全局修复 
+*/
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
