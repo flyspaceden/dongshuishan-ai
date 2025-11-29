@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import teaGardenImage from "./assets/images/生态基地/生态基地1.jpg";
 import teaProductImage from "./assets/images/核心业务/东水茶/东水茶1.jpg";
 import teaProductImage2 from "./assets/images/核心业务/东水茶/东水茶2.jpg";
-import teaProcessImage from "./assets/images/核心业务/东水茶/东水茶制作过程.jpg";
+import teaProcessVideo from "./assets/images/核心业务/东水茶/绿茶制作工艺视频生成.mp4";
+import aiPptFile from "./assets/images/首页/人工智能：从历史看未来-2020-北京怀柔.pptx";
+import aiPptThumb from "./assets/images/首页/ai-ppt-thumb.jpeg";
 import yogaImage from "./assets/images/核心业务/康养旅居/瑜伽.jpg";
 import expertDengImage from "./assets/images/专家智库/邓小铁.jpg";
 import expertLiImage from "./assets/images/专家智库/李欢.png";
@@ -41,11 +43,13 @@ import {
   ArrowLeft,
   ChevronDown,
   Monitor,
+  FileDown,
   UserCheck,
   Quote,
   Trophy,
   CloudFog,
   ZoomIn,
+  Menu,
   X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -106,12 +110,13 @@ const DATA = {
     experts: [
       {
         title: "首席顾问与院士",
+        featured: true,
         members: [
           {
             name: "邓小铁 院士",
             title: "首席科学顾问",
-            org: "欧洲科学院外籍院士",
-            desc: "国际知名算法博弈论专家，为东水山项目提供顶层AI架构设计与国际化视野指导。",
+            org: "北京大学人工智能研究院 / 前沿计算研究中心",
+            desc: "ACM Fellow，IEEE Fellow，北京大学人工智能研究院多智能体中心主任，北京大学前沿计算研究中心讲席教授，CSIAM 区块链专委会主任，ACM 计算经济学的“时间检验奖”（Test of Time Award）。",
             tags: ["顶层设计", "算法博弈论"],
             image: expertDengImage,
           },
@@ -220,6 +225,7 @@ const DATA = {
       footer: {
         companyName: "东水山AI康养生态谷",
         slogan: "科技赋能康养，生态滋养身心。",
+        support: "技术支持：深圳麻省计算机系统有限公司",
         copyright: "© 2025 广东东水山AI康养生态谷有限公司",
         privacy: "隐私政策",
         terms: "服务条款",
@@ -235,6 +241,15 @@ const DATA = {
         missionSub: "OUR MISSION",
         missionDesc:
           "广东东水山AI康养生态谷有限公司，响应“健康中国”战略，依托东水山1500年茶乡底蕴与图灵奖团队前沿技术，打破传统边界，构建集 大健康VR心理疗愈、国际研学、康养民居、国际文化交易、东水茶产业 于一体的全链条康养生态体系。",
+        aiColumn: {
+          title: "人工智能科普专栏",
+          sub: "AI POPULAR SCIENCE",
+          desc: "借助 2020 年北京怀柔的专题分享，回顾人工智能的历史脉络，理解前沿趋势与应用场景。",
+          pptTitle: "《人工智能：从历史看未来》（2020 · 北京怀柔）",
+          viewOnline: "在线预览",
+          download: "下载 PPT",
+          viewHint: "本地开发环境可能无法加载在线预览，请点击在线预览（新标签页）或直接下载查看。",
+        },
         chairman: {
           title: "董事长致辞",
           subTitle: "致各界朋友：\n共赴科技赋能乡村的生态之约",
@@ -563,12 +578,13 @@ const DATA = {
     experts: [
       {
         title: "Chief Consultants & Academicians",
+        featured: true,
         members: [
           {
             name: "Academician Deng Xiaotie",
             title: "Chief Scientific Advisor",
-            org: "Foreign Member of Academia Europaea",
-            desc: "Renowned expert in algorithmic game theory, providing top-level AI architecture design and international vision.",
+            org: "PKU AI Institute / Center for Frontier Computing Research",
+            desc: "ACM Fellow, IEEE Fellow; Director of the Multi-Agent Systems Center at PKU AI Institute; Chair Professor at PKU Center for Frontier Computing Research; Chair of the CSIAM Blockchain Committee; recipient of the ACM Economics and Computation Test of Time Award.",
             tags: ["Top-level Design", "Game Theory"],
             image: expertDengImage,
           },
@@ -681,6 +697,7 @@ const DATA = {
       footer: {
         companyName: "Dongshui Mountain AI Wellness Valley",
         slogan: "Technology Empowering Wellness, Ecology Nourishing Life.",
+        support: "Technical Support: Shenzhen Mass Computer Systems Co., Ltd.",
         copyright: "© 2025 Dongshuishan AI Wellness Valley Co., Ltd.",
         privacy: "Privacy",
         terms: "Terms",
@@ -695,6 +712,17 @@ const DATA = {
         missionSub: "OUR MISSION",
         missionDesc:
           'Dongshui Mountain AI Wellness Valley responds to the "Healthy China" strategy. Relying on 1500 years of tea heritage and Turing Award team technology, we build a comprehensive wellness ecosystem integrating VR Healing, Global Study, Wellness Living, Cultural Trade, and Dongshui Tea Industry.',
+        aiColumn: {
+          title: "AI Popular Science",
+          sub: "AI INSIGHTS",
+          desc: "A 2020 Huairou (Beijing) deck that walks through AI's history and where the field is heading next.",
+          pptTitle:
+            '“Artificial Intelligence: Looking to the Future” (2020 · Beijing Huairou)',
+          viewOnline: "View Online",
+          download: "Download PPT",
+          viewHint:
+            "On local dev the online preview may not load; open in a new tab or download to view.",
+        },
         chairman: {
           title: "Chairman's Message",
           subTitle:
@@ -1203,14 +1231,17 @@ const DongshuiTeaPage = ({ navigate, t }) => {
             </div>
           </div>
           <div className="h-full min-h-[300px] rounded-3xl overflow-hidden relative">
-            <img
-              src={teaProcessImage}
+            <video
+              src={teaProcessVideo}
               className="w-full h-full object-cover"
-              alt="Tea Processing"
+              controls
+              playsInline
+              preload="metadata"
+              title="Tea Processing Video"
             />
-            <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg text-xs font-bold shadow-lg">
-              <Trophy className="inline mr-1 text-amber-500" size={14} />{" "}
-              {content.honorTitle}
+            <div className="absolute top-4 right-4 bg-amber-50/95 border border-amber-200 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-amber-800 shadow-xl pointer-events-none flex items-center gap-2">
+              <Trophy className="text-amber-500" size={14} />
+              <span>{content.honorTitle}</span>
             </div>
           </div>
         </div>
@@ -1736,7 +1767,29 @@ const ServicesOverviewPage = ({ navigate, t }) => {
 
 const HomePage = ({ navigate, t }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [pptUrl, setPptUrl] = useState(aiPptFile);
+  const [isLocalHost, setIsLocalHost] = useState(true);
+  const [embedFailed, setEmbedFailed] = useState(false);
   const carouselData = t.carousel;
+  const aiColumn = t.pages.home.aiColumn;
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && aiPptFile) {
+      const absoluteUrl = aiPptFile.startsWith("http")
+        ? aiPptFile
+        : `${window.location.origin}${aiPptFile.startsWith("/") ? "" : "/"}${aiPptFile}`;
+      setPptUrl(absoluteUrl || aiPptFile);
+      const host = window.location.hostname;
+      const isPrivateNetwork =
+        host === "localhost" ||
+        host === "127.0.0.1" ||
+        host === "::1" ||
+        host.startsWith("192.168.") ||
+        host.startsWith("10.") ||
+        /^172\.(1[6-9]|2\d|3[0-1])\./.test(host);
+      setIsLocalHost(isPrivateNetwork);
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -1744,6 +1797,23 @@ const HomePage = ({ navigate, t }) => {
     }, 6000);
     return () => clearInterval(timer);
   }, [carouselData.length]);
+
+  const pptEmbedUrl =
+    !isLocalHost && pptUrl
+      ? `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
+          pptUrl
+        )}`
+      : null;
+  const pptPreviewLink =
+    pptUrl && !isLocalHost
+      ? `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+          pptUrl
+        )}`
+      : pptUrl || "#";
+
+  useEffect(() => {
+    setEmbedFailed(false);
+  }, [pptEmbedUrl]);
 
   return (
     <motion.div
@@ -1893,6 +1963,83 @@ const HomePage = ({ navigate, t }) => {
             onClick={() => navigate("global-study")}
             btnText={t.common.btnDetail}
           />
+        </div>
+      </section>
+
+      {/* AI Popular Science */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <SectionHeader title={aiColumn.title} subtitle={aiColumn.sub} />
+          <div className="grid lg:grid-cols-3 gap-10 items-start">
+            <div className="space-y-5">
+              <h4 className="text-2xl font-bold text-slate-900 leading-tight">
+                {aiColumn.pptTitle}
+              </h4>
+              <p className="text-slate-600 leading-relaxed">{aiColumn.desc}</p>
+              <p className="text-xs text-slate-400">{aiColumn.viewHint}</p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={pptPreviewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-200"
+                >
+                  <BookOpen size={18} />
+                  {aiColumn.viewOnline}
+                </a>
+                <a
+                  href={aiPptFile}
+                  download
+                  className="px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 border border-emerald-600 text-emerald-700 hover:bg-emerald-50"
+                >
+                  <FileDown size={18} />
+                  {aiColumn.download}
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
+                <div className="relative aspect-video bg-slate-100">
+                  {pptEmbedUrl && !embedFailed ? (
+                    <iframe
+                      title={aiColumn.pptTitle}
+                      src={pptEmbedUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allowFullScreen
+                      onError={() => setEmbedFailed(true)}
+                    />
+                  ) : pptUrl ? (
+                    <object
+                      data={pptUrl}
+                      type="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+                      className="absolute inset-0 w-full h-full"
+                    >
+                      <img
+                        src={aiPptThumb}
+                        alt={aiColumn.pptTitle}
+                        className="w-full h-full object-contain bg-white"
+                      />
+                    </object>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">
+                      加载中...
+                    </div>
+                  )}
+                  {isLocalHost && (
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-semibold text-amber-700 border border-amber-200 shadow-sm max-w-[75%] text-right">
+                      {aiColumn.viewHint}
+                    </div>
+                  )}
+                </div>
+                <div className="px-4 py-3 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 flex items-center justify-between gap-4">
+                  <span className="font-medium text-slate-800">
+                    {aiColumn.pptTitle}
+                  </span>
+                  <span className="text-slate-400">{aiColumn.viewHint}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </motion.div>
@@ -2159,8 +2306,8 @@ const ExpertsPage = ({ t }) => {
                   </h3>
                 </div>
 
-                {/* 单人特殊展示 - 首席顾问与院士 */}
-                {group.members.length === 1 ? (
+                {/* 仅首席顾问与院士用特殊展示，其余都用标准卡片 */}
+                {group.featured ? (
                   <div className="flex justify-center">
                     {group.members.map((expert, i) => (
                       <div
@@ -2649,12 +2796,31 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false);
+        setMobileDropdown(null);
+      }
+    };
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setMobileDropdown(null);
+  }, [currentPage]);
 
   const navItems = [
     { id: "home", label: t.nav.home },
@@ -2694,155 +2860,257 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <div
-          className="flex items-center gap-3 cursor-pointer group flex-shrink-0 mr-8"
-          onClick={() => navigate("home")}
-        >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
-            <Brain size={20} />
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between gap-4">
+          <div
+            className="flex items-center gap-3 cursor-pointer group flex-shrink-0"
+            onClick={() => navigate("home")}
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
+              <Brain size={20} />
+            </div>
+            <div className="flex flex-col">
+              <span
+                className={`font-bold text-lg leading-none tracking-wide ${
+                  isScrolled ||
+                  (currentPage !== "home" && currentPage !== "technology")
+                    ? "text-slate-900"
+                    : "text-white"
+                }`}
+              >
+                东水山
+              </span>
+              <span
+                className={`text-[10px] uppercase tracking-widest mt-1 ${
+                  isScrolled ||
+                  (currentPage !== "home" && currentPage !== "technology")
+                    ? "text-slate-500"
+                    : "text-emerald-200"
+                }`}
+              >
+                AI Wellness Valley
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span
-              className={`font-bold text-lg leading-none tracking-wide ${
-                isScrolled ||
-                (currentPage !== "home" && currentPage !== "technology")
-                  ? "text-slate-900"
-                  : "text-white"
-              }`}
-            >
-              东水山
-            </span>
-            <span
-              className={`text-[10px] uppercase tracking-widest mt-1 ${
-                isScrolled ||
-                (currentPage !== "home" && currentPage !== "technology")
-                  ? "text-slate-500"
-                  : "text-emerald-200"
-              }`}
-            >
-              AI Wellness Valley
-            </span>
-          </div>
-        </div>
 
-        <div className="flex-1 flex items-center justify-center gap-2 px-4 hidden lg:flex">
-          <div className="flex gap-6">
-            {navItems.map((item) => {
-              const isOpen =
-                item.dropdownType === "about"
-                  ? aboutOpen
-                  : item.dropdownType === "services"
-                  ? servicesOpen
-                  : false;
-              const setOpen =
-                item.dropdownType === "about"
-                  ? setAboutOpen
-                  : item.dropdownType === "services"
-                  ? setServicesOpen
-                  : () => {};
-              const activeSubPages =
-                item.dropdownType === "services"
-                  ? ["vr-healing", "global-study", "wellness-living", "tea"]
-                  : item.dropdownType === "about"
-                  ? ["about", "alliance"]
-                  : [];
+          <div className="flex-1 flex items-center justify-center gap-2 px-4 hidden lg:flex">
+            <div className="flex gap-6">
+              {navItems.map((item) => {
+                const isOpen =
+                  item.dropdownType === "about"
+                    ? aboutOpen
+                    : item.dropdownType === "services"
+                    ? servicesOpen
+                    : false;
+                const setOpen =
+                  item.dropdownType === "about"
+                    ? setAboutOpen
+                    : item.dropdownType === "services"
+                    ? setServicesOpen
+                    : () => {};
+                const activeSubPages =
+                  item.dropdownType === "services"
+                    ? ["vr-healing", "global-study", "wellness-living", "tea"]
+                    : item.dropdownType === "about"
+                    ? ["about", "alliance"]
+                    : [];
 
-              return (
-                <div
-                  key={item.id}
-                  className="relative group"
-                  onMouseEnter={() => item.hasDropdown && setOpen(true)}
-                  onMouseLeave={() => item.hasDropdown && setOpen(false)}
-                >
-                  <button
-                    onClick={() => !item.hasDropdown && navigate(item.id)}
-                    className={`text-sm font-medium whitespace-nowrap transition-colors hover:text-emerald-500 relative py-2 flex items-center gap-1 ${
-                      currentPage === item.id ||
-                      (item.hasDropdown && activeSubPages.includes(currentPage))
-                        ? "text-emerald-500"
-                        : isScrolled ||
-                          (currentPage !== "home" &&
-                            currentPage !== "technology")
-                        ? "text-slate-600"
-                        : "text-slate-200"
-                    }`}
+                return (
+                  <div
+                    key={item.id}
+                    className="relative group"
+                    onMouseEnter={() => item.hasDropdown && setOpen(true)}
+                    onMouseLeave={() => item.hasDropdown && setOpen(false)}
                   >
-                    {item.label}
-                    {item.hasDropdown && (
-                      <ChevronDown
-                        size={14}
-                        className={`transition-transform duration-200 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    )}
-                    <span
-                      className={`absolute -bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-emerald-500 transition-all duration-300 ${
+                    <button
+                      onClick={() => !item.hasDropdown && navigate(item.id)}
+                      className={`text-sm font-medium whitespace-nowrap transition-colors hover:text-emerald-500 relative py-2 flex items-center gap-1 ${
                         currentPage === item.id ||
                         (item.hasDropdown &&
                           activeSubPages.includes(currentPage))
-                          ? "opacity-100"
-                          : "opacity-0 group-hover:opacity-100"
-                      }`}
-                    ></span>
-                  </button>
-
-                  {item.hasDropdown && (
-                    <div
-                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-48 transition-all duration-200 ${
-                        isOpen
-                          ? "opacity-100 translate-y-0 visible"
-                          : "opacity-0 translate-y-2 invisible"
+                          ? "text-emerald-500"
+                          : isScrolled ||
+                            (currentPage !== "home" &&
+                              currentPage !== "technology")
+                          ? "text-slate-600"
+                          : "text-slate-200"
                       }`}
                     >
-                      <div className="bg-white rounded-xl shadow-2xl border border-emerald-100/50 overflow-hidden p-2">
+                      {item.label}
+                      {item.hasDropdown && (
+                        <ChevronDown
+                          size={14}
+                          className={`transition-transform duration-200 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      )}
+                      <span
+                        className={`absolute -bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-emerald-500 transition-all duration-300 ${
+                          currentPage === item.id ||
+                          (item.hasDropdown &&
+                            activeSubPages.includes(currentPage))
+                            ? "opacity-100"
+                            : "opacity-0 group-hover:opacity-100"
+                        }`}
+                      ></span>
+                    </button>
+
+                    {item.hasDropdown && (
+                      <div
+                        className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-48 transition-all duration-200 ${
+                          isOpen
+                            ? "opacity-100 translate-y-0 visible"
+                            : "opacity-0 translate-y-2 invisible"
+                        }`}
+                      >
+                        <div className="bg-white rounded-xl shadow-2xl border border-emerald-100/50 overflow-hidden p-2">
+                          {item.subItems.map((sub) => (
+                            <button
+                              key={sub.id}
+                              onClick={() => {
+                                navigate(sub.id);
+                                setOpen(false);
+                              }}
+                              className={`w-full text-left px-4 py-2 text-sm rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors ${
+                                currentPage === sub.id
+                                  ? "text-emerald-600 bg-emerald-50 font-medium"
+                                  : "text-slate-600"
+                              }`}
+                            >
+                              {sub.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {/* Language Switcher */}
+            <button
+              onClick={() => setLang((l) => (l === "zh" ? "en" : "zh"))}
+              className={`px-3 py-1 rounded border text-xs font-bold transition-all ${
+                isScrolled ||
+                (currentPage !== "home" && currentPage !== "technology")
+                  ? "border-slate-300 text-slate-600 hover:border-emerald-500 hover:text-emerald-500"
+                  : "border-white/30 text-white hover:bg-white/10"
+              }`}
+            >
+              {lang === "zh" ? "EN" : "中文"}
+            </button>
+
+            <Button
+              variant="primary"
+              className="px-5 py-2 text-sm shadow-emerald-200/50 flex-shrink-0 hidden xl:flex"
+              onClick={() => navigate("contact")}
+            >
+              {t.nav.cooperation}
+            </Button>
+
+            <button
+              className={`lg:hidden p-2 rounded-lg border transition-all ${
+                isScrolled ||
+                (currentPage !== "home" && currentPage !== "technology")
+                  ? "border-slate-200 text-slate-700 hover:border-emerald-500 hover:text-emerald-500"
+                  : "border-white/30 text-white hover:bg-white/10"
+              }`}
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label="Toggle navigation"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+
+        <div className="lg:hidden mt-4">
+          <div
+            className={`overflow-hidden transition-all duration-300 ${
+              mobileMenuOpen
+                ? "max-h-[80vh] opacity-100 translate-y-0"
+                : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+            }`}
+          >
+            <div className="bg-white/95 backdrop-blur-md border border-emerald-50 rounded-2xl shadow-xl p-4 space-y-1">
+              {navItems.map((item) => {
+                const isExpanded = mobileDropdown === item.id;
+                const isActive = currentPage === item.id;
+
+                return (
+                  <div
+                    key={item.id}
+                    className="border-b border-slate-100 last:border-none"
+                  >
+                    <button
+                      onClick={() => {
+                        if (item.hasDropdown) {
+                          setMobileDropdown((prev) =>
+                            prev === item.id ? null : item.id
+                          );
+                        } else {
+                          navigate(item.id);
+                          setMobileMenuOpen(false);
+                        }
+                      }}
+                      className={`w-full flex items-center justify-between py-3 text-left px-2 rounded-lg font-semibold transition-colors ${
+                        isActive
+                          ? "text-emerald-600 bg-emerald-50"
+                          : "text-slate-800 hover:bg-emerald-50"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {item.hasDropdown && (
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform ${
+                            isExpanded ? "rotate-180 text-emerald-600" : ""
+                          }`}
+                        />
+                      )}
+                    </button>
+
+                    {item.hasDropdown && isExpanded && (
+                      <div className="flex flex-col gap-2 pb-3 pl-3">
                         {item.subItems.map((sub) => (
                           <button
                             key={sub.id}
                             onClick={() => {
                               navigate(sub.id);
-                              setOpen(false);
+                              setMobileMenuOpen(false);
                             }}
-                            className={`w-full text-left px-4 py-2 text-sm rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors ${
+                            className={`text-left text-sm px-3 py-2 rounded-lg transition-colors ${
                               currentPage === sub.id
-                                ? "text-emerald-600 bg-emerald-50 font-medium"
-                                : "text-slate-600"
+                                ? "bg-emerald-50 text-emerald-600 font-medium"
+                                : "text-slate-700 hover:bg-emerald-50"
                             }`}
                           >
                             {sub.label}
                           </button>
                         ))}
                       </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    )}
+                  </div>
+                );
+              })}
+
+              <div className="pt-2 flex flex-col gap-2">
+                <Button
+                  variant="primary"
+                  className="w-full justify-center"
+                  onClick={() => {
+                    navigate("contact");
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  {t.nav.cooperation}
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="flex items-center gap-4">
-          {/* Language Switcher */}
-          <button
-            onClick={() => setLang((l) => (l === "zh" ? "en" : "zh"))}
-            className={`px-3 py-1 rounded border text-xs font-bold transition-all ${
-              isScrolled ||
-              (currentPage !== "home" && currentPage !== "technology")
-                ? "border-slate-300 text-slate-600 hover:border-emerald-500 hover:text-emerald-500"
-                : "border-white/30 text-white hover:bg-white/10"
-            }`}
-          >
-            {lang === "zh" ? "EN" : "中文"}
-          </button>
-
-          <Button
-            variant="primary"
-            className="px-5 py-2 text-sm shadow-emerald-200/50 flex-shrink-0 hidden xl:flex"
-            onClick={() => navigate("contact")}
-          >
-            {t.nav.cooperation}
-          </Button>
         </div>
       </div>
     </nav>
@@ -2920,8 +3188,11 @@ const Footer = ({ navigate, t }) => (
           </ul>
         </div>
       </div>
-      <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-600 text-xs">
-        <p>{t.common.footer.copyright}</p>
+      <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center text-slate-600 text-xs">
+        <div className="space-y-1">
+          <p>{t.common.footer.copyright}</p>
+          <p>{t.common.footer.support}</p>
+        </div>
         <div className="flex gap-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-white">
             {t.common.footer.privacy}
