@@ -115,7 +115,7 @@ const DATA = {
           {
             name: "邓小铁 院士",
             title: "首席科学顾问",
-            org: "北京大学人工智能研究院 / 前沿计算研究中心",
+            org: "欧洲科学院外籍院士 / 北京大学人工智能研究院 / 前沿计算研究中心",
             desc: "ACM Fellow，IEEE Fellow，北京大学人工智能研究院多智能体中心主任，北京大学前沿计算研究中心讲席教授，CSIAM 区块链专委会主任，ACM 计算经济学的“时间检验奖”（Test of Time Award）。",
             tags: ["顶层设计", "算法博弈论"],
             image: expertDengImage,
