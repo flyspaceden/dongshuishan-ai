@@ -51,6 +51,15 @@ import {
   ZoomIn,
   Menu,
   X,
+  Music,
+  Sparkles,
+  Ticket,
+  CalendarRange,
+  Camera,
+  PartyPopper,
+  Star,
+  Palette,
+  Waves,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -72,6 +81,7 @@ const DATA = {
       contact: "联系我们",
       cooperation: "合作咨询",
       sub: {
+        festival: "国际时尚音乐节",
         vr: "VR 心理疗愈",
         study: "国际研学",
         living: "康养旅居",
@@ -268,6 +278,82 @@ const DATA = {
           { value: "15万+", label: "年服务人次", sub: "大湾区首选目的地" },
           { value: "5000亩", label: "智慧富硒茶园", sub: "区块链全流程溯源" },
         ],
+      },
+      festival: {
+        title: "东水山国际时尚音乐节",
+        sub: "FASHION X MUSIC FESTIVAL",
+        heroTitle: "山水间的时尚与音乐狂欢",
+        heroDesc:
+          "当绿美东水山的青山绿水邂逅国际潮流，一场融合听觉盛宴与视觉奢享的文化盛典即将启幕，以“自然与艺术共生，传统与潮流碰撞”为核心，邀你共赴山水间的时尚音乐之约。",
+        heroNote: "自然与艺术共生 · 传统与潮流碰撞",
+        date: "2025 · 阳西东水山核心景区",
+        location: "东水山国际生态谷 · 3大舞台",
+        highlights: [
+          {
+            label: "时尚领衔",
+            value: "Laurence Xu 东方高定",
+            desc: "首位登陆巴黎高定周的中国设计师，携非遗技艺打造沉浸式山水秀场。",
+          },
+          {
+            label: "音乐阵容",
+            value: "伯克利校友群星",
+            desc: "横跨流行、摇滚、爵士、New Age，多元韵律全天候点燃山谷。",
+          },
+          {
+            label: "沉浸场景",
+            value: "主舞台+互动+草坪",
+            desc: "山势巨幕、非遗体验区、草坪松弛感，让视觉与听觉无缝衔接。",
+          },
+        ],
+        fashionTitle: "时尚领衔：Laurence Xu 的东方美学演绎",
+        fashionDesc:
+          "特邀国际时尚大师劳伦斯·许坐镇，他曾以南京云锦、敦煌壁画惊艳巴黎秀场，以艾德莱斯绸、苗绣等非遗工艺诠释民族美学。此次，他将让高级定制走进山水，打造沉浸式时尚秀演，让非遗与现代潮流在东水山碰撞。",
+        musicTitle: "音乐盛宴：伯克利校友的多元韵律狂欢",
+        musicDesc:
+          "多位伯克利音乐学院校友齐聚舞台，跨越流行、摇滚、爵士、New Age 等风格。旋律诗人级唱作人零修音开唱，跨界制作人融合古典与南美民族音乐，新生代原创乐队带来活力新声——专业功底与创作才华为你呈现高品质听觉狂欢。",
+        sceneTitle: "山水共生：沉浸式时尚音乐体验",
+        sceneDesc:
+          "三大特色舞台错落分布于青山绿水间：主舞台结合自然山势打造超宽视觉画幅；互动舞台设置非遗体验区，观众可近距离感受大师作品中的传统工艺；草坪舞台聚焦新生代音乐人，营造轻松惬意的聆听氛围。现场还设有时尚市集与潮流打卡点，让音乐、时尚与山水观光深度融合。",
+        closing:
+          "这场集国际时尚、顶级音乐、自然生态于一体的盛会，既是潮流文化的集中展示，也是传统文化的创新表达。东水山国际时尚音乐节，邀你在青山绿水间，邂逅时尚与音乐的极致碰撞。",
+        stages: [
+          {
+            name: "主舞台 · 山势巨幕",
+            vibe: "视觉大片",
+            detail: "顺应山体高差打造广角巨幕，配合高定视觉与光影秀，形成天然环绕感。",
+          },
+          {
+            name: "互动舞台 · 非遗体验",
+            vibe: "近距离共创",
+            detail: "苗绣、云锦、艾德莱斯绸元素现场共创，观众可参与定制打卡。",
+          },
+          {
+            name: "草坪舞台 · 新生代",
+            vibe: "松弛氛围",
+            detail: "伯克利新生代与独立音乐人轮番上场，铺陈野餐、露营式观演体验。",
+          },
+        ],
+        experiences: [
+          {
+            tag: "全天候音乐",
+            title: "伯克利校友群星",
+            desc: "零修音舞台、跨界合作段落，保证高水准现场。",
+          },
+          {
+            tag: "时尚市集",
+            title: "潮流打卡 x 限定周边",
+            desc: "高定灵感周边、自然系香氛、艺术衍生品一次收齐。",
+          },
+          {
+            tag: "沉浸光影",
+            title: "山水夜景 + AI 声光",
+            desc: "利用山谷声学与雾气光束，营造梦幻夜场氛围。",
+          },
+        ],
+        ctaTitle: "需要一份单日行程建议？",
+        ctaDesc: "留下联系方式，我们会根据你的偏好发送音乐节日程与交通/住宿建议。",
+        ctaBtnPrimary: "索取行程单",
+        ctaBtnSecondary: "预约尊享席位",
       },
       vr: {
         title: "AI+VR 深度心理疗愈中心",
@@ -541,6 +627,7 @@ const DATA = {
       contact: "Contact",
       cooperation: "Partner With Us",
       sub: {
+        festival: "Fashion Music Festival",
         vr: "VR Healing",
         study: "Global Study",
         living: "Wellness Living",
@@ -760,6 +847,83 @@ const DATA = {
             sub: "Blockchain Traceable",
           },
         ],
+      },
+      festival: {
+        title: "Dongshuishan Int'l Fashion Music Festival",
+        sub: "FASHION X MUSIC FESTIVAL",
+        heroTitle: "Fashion & Music Among Mountains and Waters",
+        heroDesc:
+          "When lush Dongshuishan meets global trends, a feast for the eyes and ears unfolds. Built on “Nature with Art, Tradition with Trend,” the festival invites you to a couture-level rendezvous in the valley.",
+        heroNote: "Nature x Art · Tradition x Trend",
+        date: "2025 · Dongshuishan Core Scenic Area",
+        location: "Dongshuishan Eco Valley · 3 Stages",
+        highlights: [
+          {
+            label: "Fashion Lead",
+            value: "Laurence Xu Couture",
+            desc: "First Chinese designer on Paris Haute Couture Week, bringing intangible craft into an immersive valley show.",
+          },
+          {
+            label: "Music Lineup",
+            value: "Berklee Alumni Stars",
+            desc: "Pop, rock, jazz, and New Age collide for an all-day sonic celebration.",
+          },
+          {
+            label: "Immersive Scene",
+            value: "Main + Interactive + Lawn",
+            desc: "Mountain-wide LED vista, heritage experience zone, and relaxing lawn vibes in one loop.",
+          },
+        ],
+        fashionTitle: "Fashion Lead: Laurence Xu's Eastern Aesthetics",
+        fashionDesc:
+          "Haute couture director Laurence Xu will stage an immersive show in nature. Known for weaving Nanjing brocade, Dunhuang murals, Adras silk, and Miao embroidery into Paris runways, he merges intangible heritage with modern silhouettes to reimagine luxury in the valley.",
+        musicTitle: "Music Feast: Berklee Alumni Lineup",
+        musicDesc:
+          "Berklee alumni artists span pop, rock, jazz, and New Age. Zero-autotune singer-songwriters, crossover producers blending classical and Latin folk, and energetic indie bands deliver a day-long, high-fidelity live experience.",
+        sceneTitle: "Nature-Synced Immersion",
+        sceneDesc:
+          "Three stages nestle between peaks and water: the main stage uses the mountain slope as a panoramic canvas; the interactive stage hosts heritage craft pop-ups so guests can touch the couture DNA; the lawn stage spotlights emerging artists with breezy picnic vibes. Fashion market and photo spots connect music, couture, and sightseeing.",
+        closing:
+          "This festival fuses global fashion, top-tier music, and pristine ecology—a showcase of trends and an inventive tribute to tradition. Join us to witness the ultimate collision of style and sound at Dongshuishan.",
+        stages: [
+          {
+            name: "Main Stage · Mountain Canvas",
+            vibe: "Cinematic Visual",
+            detail: "Wide-angle LED blended with the slope, paired with couture visuals and light shows for an enveloping field.",
+          },
+          {
+            name: "Interactive Stage · Heritage Lab",
+            vibe: "Up-Close Co-creation",
+            detail: "Miao embroidery, brocade, and Adras silk elements for on-site co-creation and bespoke souvenirs.",
+          },
+          {
+            name: "Lawn Stage · Emerging Voices",
+            vibe: "Laid-back Energy",
+            detail: "Berklee newcomers and indie musicians rotate sets with picnic-and-camp style seating.",
+          },
+        ],
+        experiences: [
+          {
+            tag: "All-Day Music",
+            title: "Berklee Alumni Stars",
+            desc: "Zero-autotune vocals and crossover collabs keep the valley's acoustics pure.",
+          },
+          {
+            tag: "Fashion Market",
+            title: "Photo Ops & Limited Merch",
+            desc: "Couture-inspired merch, nature-scent candles, and art drops in one stroll.",
+          },
+          {
+            tag: "Immersive Light",
+            title: "Nightscape x AI Sound",
+            desc: "Valley acoustics with mist beams to craft a dreamy night set.",
+          },
+        ],
+        ctaTitle: "Want a one-day itinerary?",
+        ctaDesc:
+          "Leave your contact—get a tailored schedule plus transport and stay suggestions.",
+        ctaBtnPrimary: "Get Itinerary",
+        ctaBtnSecondary: "Reserve Premium Seat",
       },
       vr: {
         title: "AI+VR Deep Psychology Healing Center",
@@ -1271,6 +1435,212 @@ const DongshuiTeaPage = ({ navigate, t }) => {
   );
 };
 
+const MusicFestivalPage = ({ navigate, t }) => {
+  const content = t.pages.festival;
+  const highlightIcons = [
+    <Sparkles size={20} key="sparkles" />,
+    <Music size={20} key="music" />,
+    <Waves size={20} key="waves" />,
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="pt-32 pb-20 bg-slate-950 text-white min-h-screen"
+    >
+      <div className="container mx-auto px-6">
+        <BackButton
+          onClick={() => navigate("services")}
+          text={t.common.btnBack}
+        />
+
+        {/* Hero */}
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900 via-slate-900 to-emerald-900 p-10 md:p-14 mb-12 shadow-2xl border border-white/10">
+          <img
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop"
+            alt={content.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/50 to-emerald-900/60"></div>
+          <div className="relative z-10 max-w-3xl">
+            <div className="flex flex-wrap gap-3 mb-4">
+              <span className="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest">
+                {content.sub}
+              </span>
+              <span className="px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-300/40 text-emerald-100 text-xs font-semibold">
+                {content.heroNote}
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-3">
+              {content.title}
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-bold text-emerald-200 mb-4">
+              {content.heroTitle}
+            </h2>
+            <p className="text-lg text-slate-200 leading-relaxed mb-6">
+              {content.heroDesc}
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              <div className="px-4 py-2 rounded-full bg-white/10 border border-white/20 flex items-center gap-2">
+                <CalendarRange size={18} />
+                {content.date}
+              </div>
+              <div className="px-4 py-2 rounded-full bg-white/10 border border-white/20 flex items-center gap-2">
+                <MapPin size={18} />
+                {content.location}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Highlights */}
+        <div className="grid md:grid-cols-3 gap-6 mb-14">
+          {content.highlights.map((item, i) => (
+            <div
+              key={item.label}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl hover:border-emerald-300/40 transition-all backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-emerald-200 border border-white/10">
+                  {highlightIcons[i % highlightIcons.length]}
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-slate-300">
+                    {item.label}
+                  </p>
+                  <h4 className="text-xl font-bold text-white">{item.value}</h4>
+                </div>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Fashion & Music */}
+        <div className="grid lg:grid-cols-2 gap-10 mb-14">
+          <div className="bg-gradient-to-br from-emerald-900/60 to-slate-900 border border-emerald-500/20 p-8 rounded-3xl shadow-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <Palette className="text-emerald-300" />
+              <h3 className="text-2xl font-bold">{content.fashionTitle}</h3>
+            </div>
+            <p className="text-slate-200 leading-relaxed">
+              {content.fashionDesc}
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-purple-900/60 to-slate-900 border border-purple-500/30 p-8 rounded-3xl shadow-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <Music className="text-purple-200" />
+              <h3 className="text-2xl font-bold">{content.musicTitle}</h3>
+            </div>
+            <p className="text-slate-200 leading-relaxed">
+              {content.musicDesc}
+            </p>
+          </div>
+        </div>
+
+        {/* Scene & Stages */}
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-4">
+            <Star className="text-amber-300" />
+            <h3 className="text-2xl font-bold">{content.sceneTitle}</h3>
+          </div>
+          <p className="text-slate-200 leading-relaxed mb-8">
+            {content.sceneDesc}
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {content.stages.map((stage, i) => (
+              <div
+                key={stage.name}
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 hover:border-emerald-300/40 transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="text-xs font-bold text-emerald-200 uppercase tracking-widest">
+                    {stage.vibe}
+                  </div>
+                  <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] text-slate-200">
+                    {i + 1}/3
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-white">{stage.name}</h4>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  {stage.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Experience Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-14">
+          {content.experiences.map((exp) => (
+            <div
+              key={exp.title}
+              className="bg-white text-slate-900 rounded-2xl p-6 shadow-lg border border-emerald-50"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                  {exp.tag}
+                </span>
+                <PartyPopper className="text-emerald-500" size={18} />
+              </div>
+              <h4 className="text-lg font-bold mb-2">{exp.title}</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {exp.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Closing CTA */}
+        <div className="bg-white rounded-3xl p-10 shadow-2xl border border-emerald-100">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                {content.ctaTitle}
+              </h3>
+              <p className="text-slate-600 mb-4 leading-relaxed">
+                {content.ctaDesc}
+              </p>
+              <p className="text-emerald-700 font-semibold">
+                {content.closing}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 justify-end">
+              <Button
+                variant="primary"
+                className="justify-center"
+                onClick={() => navigate("contact")}
+              >
+                <Ticket size={18} />
+                {content.ctaBtnPrimary}
+              </Button>
+              <Button
+                variant="outline"
+                className="justify-center"
+                onClick={() => navigate("contact")}
+              >
+                <Camera size={18} />
+                {content.ctaBtnSecondary}
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-emerald-700"
+                onClick={() => navigate("services")}
+              >
+                {t.common.btnBack} <ArrowRight size={16} />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const VRHealingPage = ({ navigate, t }) => {
   const content = t.pages.vr;
   return (
@@ -1649,6 +2019,50 @@ const ServicesOverviewPage = ({ navigate, t }) => {
     >
       <div className="container mx-auto px-6">
         <SectionHeader title={t.nav.services} subtitle={t.nav.servicesSub} />
+
+        {/* 0. Fashion Music Festival */}
+        <div id="festival" className="mb-24 scroll-mt-28">
+          <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
+            <div className="md:w-1/2">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2070&auto=format&fit=crop"
+                  alt="Festival"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/30 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full text-white text-xs font-bold border border-white/20">
+                  {content.festival.heroNote}
+                </div>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                <Music />
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 mb-3">
+                {content.festival.title}
+              </h3>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                {content.festival.heroDesc}
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6 text-xs text-slate-500">
+                <span className="px-3 py-1 bg-emerald-50 rounded-full border border-emerald-100">
+                  {content.festival.location}
+                </span>
+                <span className="px-3 py-1 bg-slate-50 rounded-full border border-slate-200">
+                  {content.festival.date}
+                </span>
+              </div>
+              <Button
+                variant="primary"
+                onClick={() => navigate("music-festival")}
+              >
+                {t.common.btnDetail} <ArrowRight size={16} />
+              </Button>
+            </div>
+          </div>
+        </div>
 
         {/* 1. VR Healing */}
         <div id="vr" className="mb-24 scroll-mt-28">
@@ -2847,6 +3261,7 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
       hasDropdown: true,
       dropdownType: "services",
       subItems: [
+        { id: "music-festival", label: t.nav.sub.festival },
         { id: "vr-healing", label: t.nav.sub.vr },
         { id: "global-study", label: t.nav.sub.study },
         { id: "wellness-living", label: t.nav.sub.living },
@@ -2915,7 +3330,13 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                     : () => {};
                 const activeSubPages =
                   item.dropdownType === "services"
-                    ? ["vr-healing", "global-study", "wellness-living", "tea"]
+                    ? [
+                        "music-festival",
+                        "vr-healing",
+                        "global-study",
+                        "wellness-living",
+                        "tea",
+                      ]
                     : item.dropdownType === "about"
                     ? ["about", "alliance"]
                     : [];
@@ -3146,6 +3567,14 @@ const Footer = ({ navigate, t }) => (
           <ul className="space-y-3 text-slate-400 text-sm">
             <li>
               <button
+                onClick={() => navigate("music-festival")}
+                className="hover:text-emerald-400 transition-colors"
+              >
+                {t.nav.sub.festival}
+              </button>
+            </li>
+            <li>
+              <button
                 onClick={() => navigate("vr-healing")}
                 className="hover:text-emerald-400 transition-colors"
               >
@@ -3239,6 +3668,8 @@ const App = () => {
         return <TechPage t={t} />;
       case "services":
         return <ServicesOverviewPage navigate={navigate} t={t} />;
+      case "music-festival":
+        return <MusicFestivalPage navigate={navigate} t={t} />;
       case "vr-healing":
         return <VRHealingPage navigate={navigate} t={t} />;
       case "global-study":
