@@ -248,7 +248,8 @@ const DATA = {
           pptTitle: "《人工智能：从历史看未来》（2020 · 北京怀柔）",
           viewOnline: "在线预览",
           download: "下载 PPT",
-          viewHint: "本地开发环境可能无法加载在线预览，请点击在线预览（新标签页）或直接下载查看。",
+          viewHint: "如在线预览未加载，请点击在线预览（新标签页）或直接下载查看。",
+          viewHintLocal: "本地/内网可能无法加载在线预览，请点击在线预览（新标签页）或直接下载查看。",
         },
         chairman: {
           title: "董事长致辞",
@@ -721,7 +722,9 @@ const DATA = {
           viewOnline: "View Online",
           download: "Download PPT",
           viewHint:
-            "On local dev the online preview may not load; open in a new tab or download to view.",
+            "If the online preview doesn't load, open in a new tab or download to view.",
+          viewHintLocal:
+            "Local/private networks may not load the online preview; open in a new tab or download to view.",
         },
         chairman: {
           title: "Chairman's Message",
@@ -1976,7 +1979,9 @@ const HomePage = ({ navigate, t }) => {
                 {aiColumn.pptTitle}
               </h4>
               <p className="text-slate-600 leading-relaxed">{aiColumn.desc}</p>
-              <p className="text-xs text-slate-400">{aiColumn.viewHint}</p>
+              <p className="text-xs text-slate-400">
+                {isLocalHost ? aiColumn.viewHintLocal : aiColumn.viewHint}
+              </p>
               <div className="flex flex-wrap gap-3">
                 <a
                   href={pptPreviewLink}
@@ -2027,7 +2032,7 @@ const HomePage = ({ navigate, t }) => {
                   )}
                   {isLocalHost && (
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-semibold text-amber-700 border border-amber-200 shadow-sm max-w-[75%] text-right">
-                      {aiColumn.viewHint}
+                      {aiColumn.viewHintLocal}
                     </div>
                   )}
                 </div>
