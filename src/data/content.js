@@ -201,6 +201,7 @@ export const DATA = {
           sub: "AI POPULAR SCIENCE",
           desc: "借助 2020 年北京怀柔的专题分享，回顾人工智能的历史脉络，理解前沿趋势与应用场景。",
           pptTitle: "《人工智能：从历史看未来》",
+          rightTitle: "AI 技术科普视频",
           viewOnline: "在线预览",
           viewHint: "如在线预览未加载，请刷新或稍后再试；仅支持在线预览，不提供下载。",
           viewHintLocal: "本地/内网可能无法加载在线预览，请刷新或稍后再试；仅支持在线预览，不提供下载。",
@@ -751,6 +752,7 @@ export const DATA = {
           desc: "Borrowing the 2020 Huairou session to revisit AI history and understand trends and applications.",
           pptTitle:
             '“Artificial Intelligence: Looking to the Future”',
+          rightTitle: "AI Tech Video",
           viewOnline: "View Online",
           viewHint:
             "If the online preview doesn't load, refresh or try later; online view only, download disabled.",

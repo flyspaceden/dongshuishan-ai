@@ -242,7 +242,7 @@ export const HomePage = ({ navigate, t }) => {
               <div className="px-6 py-4 flex items-center justify-between border-b border-slate-100">
                 <div>
                   <h4 className="text-lg font-bold text-slate-900">
-                    AI 技术科普视频
+                    {aiColumn.rightTitle || "AI 技术科普视频"}
                   </h4>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-slate-600">
