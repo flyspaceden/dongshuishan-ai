@@ -2156,7 +2156,7 @@ const ServicesOverviewPage = ({ navigate, t }) => {
           <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
             <div className="md:w-1/2">
               <img
-                src="https://images.unsplash.com/photo-1586335960010-449e7b26499a?q=80&w=2070&auto=format&fit=crop"
+                src={teaProductImage2}
                 alt="Tea"
                 className="rounded-3xl shadow-xl w-full"
               />
@@ -3338,8 +3338,8 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                         "tea",
                       ]
                     : item.dropdownType === "about"
-                    ? ["about", "alliance"]
-                    : [];
+                  ? ["about", "alliance"]
+                  : [];
 
                 return (
                   <div
@@ -3349,7 +3349,7 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                     onMouseLeave={() => item.hasDropdown && setOpen(false)}
                   >
                     <button
-                      onClick={() => !item.hasDropdown && navigate(item.id)}
+                      onClick={() => navigate(item.id)}
                       className={`text-sm font-medium whitespace-nowrap transition-colors hover:text-emerald-500 relative py-2 flex items-center gap-1 ${
                         currentPage === item.id ||
                         (item.hasDropdown &&
