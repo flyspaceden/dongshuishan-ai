@@ -12,38 +12,18 @@ import {
   Users,
 } from "lucide-react";
 
-import aiPptFile from "../assets/images/首页/人工智能：从历史看未来-2020-北京怀柔.pptx";
-import aiPptThumb from "../assets/images/首页/ai-ppt-thumb.jpeg";
+import aiHistoryVideo from "../assets/images/首页/人工智能：从历史看未来.mp4";
 import aiVideo from "../assets/images/首页/ai视频.mp4";
 import { Button, FeatureCard, SectionHeader } from "../components/ui";
 
 export const HomePage = ({ navigate, t }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [pptUrl, setPptUrl] = useState(aiPptFile);
-  const [isLocalHost, setIsLocalHost] = useState(true);
-  const [embedFailed, setEmbedFailed] = useState(false);
-  const [playbackRate, setPlaybackRate] = useState(1);
-  const videoRef = useRef(null);
+  const [historyRate, setHistoryRate] = useState(1);
+  const [aiRate, setAiRate] = useState(1);
+  const historyVideoRef = useRef(null);
+  const aiVideoRef = useRef(null);
   const carouselData = t.carousel;
   const aiColumn = t.pages.home.aiColumn;
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && aiPptFile) {
-      const absoluteUrl = aiPptFile.startsWith("http")
-        ? aiPptFile
-        : `${window.location.origin}${aiPptFile.startsWith("/") ? "" : "/"}${aiPptFile}`;
-      setPptUrl(absoluteUrl || aiPptFile);
-      const host = window.location.hostname;
-      const isPrivateNetwork =
-        host === "localhost" ||
-        host === "127.0.0.1" ||
-        host === "::1" ||
-        host.startsWith("192.168.") ||
-        host.startsWith("10.") ||
-        /^172\.(1[6-9]|2\d|3[0-1])\./.test(host);
-      setIsLocalHost(isPrivateNetwork);
-    }
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -51,17 +31,6 @@ export const HomePage = ({ navigate, t }) => {
     }, 6000);
     return () => clearInterval(timer);
   }, [carouselData.length]);
-
-  const pptEmbedUrl =
-    !isLocalHost && pptUrl
-      ? `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
-          pptUrl
-        )}`
-      : null;
-
-  useEffect(() => {
-    setEmbedFailed(false);
-  }, [pptEmbedUrl]);
 
   return (
     <motion.div
@@ -218,101 +187,101 @@ export const HomePage = ({ navigate, t }) => {
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <SectionHeader title={aiColumn.title} subtitle={aiColumn.sub} />
-          <div className="grid lg:grid-cols-3 gap-10 items-start">
-            <div className="space-y-5">
-              <h4 className="text-2xl font-bold text-slate-900 leading-tight">
-                {aiColumn.pptTitle}
-              </h4>
-              <p className="text-slate-600 leading-relaxed">{aiColumn.desc}</p>
-              <p className="text-xs text-slate-400">
-                {isLocalHost ? aiColumn.viewHintLocal : aiColumn.viewHint}
-              </p>
-            </div>
-            <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-                <div className="relative aspect-video bg-slate-100">
-                  {pptEmbedUrl && !embedFailed ? (
-                    <iframe
-                      title={aiColumn.pptTitle}
-                      src={pptEmbedUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allowFullScreen
-                      onError={() => setEmbedFailed(true)}
-                    />
-                  ) : (
-                    <div className="absolute inset-0">
-                      <img
-                        src={aiPptThumb}
-                        alt={aiColumn.pptTitle}
-                        className="w-full h-full object-contain bg-white"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/80 text-slate-500 text-sm">
-                        预览暂不可用，请稍后再试（仅在线预览，不提供下载）
-                      </div>
-                    </div>
-                  )}
-                  {isLocalHost && (
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-semibold text-amber-700 border border-amber-200 shadow-sm max-w-[75%] text-right">
-                      {aiColumn.viewHintLocal}
-                    </div>
-                  )}
-                </div>
-                <div className="px-4 py-3 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 flex items-center justify-between gap-4">
-                  <span className="font-medium text-slate-800">
+          <p className="text-slate-600 leading-relaxed max-w-3xl mb-10">
+            {aiColumn.desc}
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
+              <div className="px-6 py-4 flex items-center justify-between border-b border-slate-100">
+                <div>
+                  <h4 className="text-lg font-bold text-slate-900">
                     {aiColumn.pptTitle}
-                  </span>
-                  <span className="text-slate-400">{aiColumn.viewHint}</span>
+                  </h4>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-slate-600">
+                  {t.common.playbackLabel}：
+                  {[0.5, 1, 1.25, 1.5, 2].map((rate) => (
+                    <button
+                      key={rate}
+                      onClick={() => {
+                        setHistoryRate(rate);
+                        if (historyVideoRef.current) {
+                          historyVideoRef.current.playbackRate = rate;
+                        }
+                      }}
+                      className={`px-2 py-1 rounded border text-[11px] transition-colors ${
+                        historyRate === rate
+                          ? "border-emerald-500 text-emerald-600 bg-emerald-50"
+                          : "border-slate-200 text-slate-600 hover:border-emerald-300"
+                      }`}
+                      type="button"
+                    >
+                      {rate}x
+                    </button>
+                  ))}
                 </div>
               </div>
+              <div className="relative bg-black aspect-video">
+                <video
+                  ref={historyVideoRef}
+                  src={aiHistoryVideo}
+                  className="absolute inset-0 w-full h-full object-contain"
+                  controls
+                  playsInline
+                  controlsList="nodownload"
+                  onLoadedMetadata={() => {
+                    if (historyVideoRef.current) {
+                      historyVideoRef.current.playbackRate = historyRate;
+                    }
+                  }}
+                />
+              </div>
+            </div>
 
-              <div className="mt-8 rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-                <div className="px-6 py-4 flex items-center justify-between border-b border-slate-100">
-                  <div>
-                    <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest">
-                      AI 视频
-                    </p>
-                    <h4 className="text-lg font-bold text-slate-900">
-                      AI 技术科普视频
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-slate-600">
-                    倍速：
-                    {[0.75, 1, 1.25, 1.5].map((rate) => (
-                      <button
-                        key={rate}
-                        onClick={() => {
-                          setPlaybackRate(rate);
-                          if (videoRef.current) {
-                            videoRef.current.playbackRate = rate;
-                          }
-                        }}
-                        className={`px-2 py-1 rounded border text-[11px] transition-colors ${
-                          playbackRate === rate
-                            ? "border-emerald-500 text-emerald-600 bg-emerald-50"
-                            : "border-slate-200 text-slate-600 hover:border-emerald-300"
-                        }`}
-                        type="button"
-                      >
-                        {rate}x
-                      </button>
-                    ))}
-                  </div>
+            <div className="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
+              <div className="px-6 py-4 flex items-center justify-between border-b border-slate-100">
+                <div>
+                  <h4 className="text-lg font-bold text-slate-900">
+                    AI 技术科普视频
+                  </h4>
                 </div>
-                <div className="relative bg-black">
-                  <video
-                    ref={videoRef}
-                    src={aiVideo}
-                    className="w-full h-full"
-                    controls
-                    playsInline
-                    controlsList="nodownload"
-                    onLoadedMetadata={() => {
-                      if (videoRef.current) {
-                        videoRef.current.playbackRate = playbackRate;
-                      }
-                    }}
-                  />
+                <div className="flex items-center gap-2 text-xs text-slate-600">
+                  {t.common.playbackLabel}：
+                  {[0.5, 1, 1.25, 1.5, 2].map((rate) => (
+                    <button
+                      key={rate}
+                      onClick={() => {
+                        setAiRate(rate);
+                        if (aiVideoRef.current) {
+                          aiVideoRef.current.playbackRate = rate;
+                        }
+                      }}
+                      className={`px-2 py-1 rounded border text-[11px] transition-colors ${
+                        aiRate === rate
+                          ? "border-emerald-500 text-emerald-600 bg-emerald-50"
+                          : "border-slate-200 text-slate-600 hover:border-emerald-300"
+                      }`}
+                      type="button"
+                    >
+                      {rate}x
+                    </button>
+                  ))}
                 </div>
+              </div>
+              <div className="relative bg-black aspect-video">
+                <video
+                  ref={aiVideoRef}
+                  src={aiVideo}
+                  className="absolute inset-0 w-full h-full object-contain"
+                  controls
+                  playsInline
+                  controlsList="nodownload"
+                  onLoadedMetadata={() => {
+                    if (aiVideoRef.current) {
+                      aiVideoRef.current.playbackRate = aiRate;
+                    }
+                  }}
+                />
               </div>
             </div>
           </div>
