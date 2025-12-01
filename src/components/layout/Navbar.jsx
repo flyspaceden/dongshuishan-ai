@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Brain, ChevronDown, Menu, X } from "lucide-react";
+import { Brain, ChevronDown, Menu, ShieldCheck, Smile, Sparkles, X } from "lucide-react";
 
 import { Button } from "../ui";
 
@@ -9,6 +9,7 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const [hoverSub, setHoverSub] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -62,6 +63,29 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
     },
     { id: "experts", label: t.nav.experts },
     { id: "contact", label: t.nav.contact },
+  ];
+  const vrSubItems = [
+    {
+      id: "vr-assessment",
+      label: t.nav.sub.vrAssessment,
+      desc: t.pages.vrAssessment.heroDesc,
+      tag: t.pages.vrAssessment.sub,
+      icon: <Sparkles size={16} className="text-emerald-500" />,
+    },
+    {
+      id: "vr-happy",
+      label: t.nav.sub.vrHappy,
+      desc: t.pages.vrHappy.heroDesc,
+      tag: t.pages.vrHappy.sub,
+      icon: <Smile size={16} className="text-orange-500" />,
+    },
+    {
+      id: "vr-modules",
+      label: t.nav.sub.vrModules,
+      desc: t.pages.vrModules.heroDesc,
+      tag: t.pages.vrModules.sub,
+      icon: <ShieldCheck size={16} className="text-blue-500" />,
+    },
   ];
 
   return (
@@ -125,6 +149,9 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                     ? [
                         "music-festival",
                         "vr-healing",
+                        "vr-assessment",
+                        "vr-happy",
+                        "vr-modules",
                         "global-study",
                         "wellness-living",
                         "tea",
@@ -182,23 +209,79 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                             : "opacity-0 translate-y-2 invisible"
                         }`}
                       >
-                        <div className="bg-white rounded-xl shadow-2xl border border-emerald-100/50 overflow-hidden p-2">
-                          {item.subItems.map((sub) => (
-                            <button
-                              key={sub.id}
-                              onClick={() => {
-                                navigate(sub.id);
-                                setOpen(false);
-                              }}
-                              className={`w-full text-left px-4 py-2 text-sm rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors ${
-                                currentPage === sub.id
-                                  ? "text-emerald-600 bg-emerald-50 font-medium"
-                                  : "text-slate-600"
-                              }`}
-                            >
-                              {sub.label}
-                            </button>
-                          ))}
+                        <div className="bg-white rounded-xl shadow-2xl border border-emerald-100/50 p-2 relative overflow-visible">
+                          {item.subItems.map((sub) => {
+                            const isVR = sub.id === "vr-healing";
+                            return (
+                              <div
+                                key={sub.id}
+                                className="relative group/sub"
+                                onMouseEnter={() => isVR && setHoverSub("vr")}
+                                onMouseLeave={() => isVR && setHoverSub(null)}
+                              >
+                                <button
+                                  onClick={() => {
+                                    navigate(sub.id);
+                                    setOpen(false);
+                                  }}
+                                  className={`w-full text-left px-4 py-2 text-sm rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors ${
+                                    currentPage === sub.id
+                                      ? "text-emerald-600 bg-emerald-50 font-medium"
+                                      : "text-slate-600"
+                                  }`}
+                                >
+                                  <div className="flex items-center justify-between gap-2">
+                                    <span>{sub.label}</span>
+                                    {sub.id === "vr-healing" && (
+                                      <ChevronDown
+                                        size={14}
+                                        className="text-slate-400 transition-transform duration-200 -rotate-90 group-hover/sub:rotate-0"
+                                      />
+                                    )}
+                                  </div>
+                                </button>
+                                {isVR && (
+                                  <div
+                                    className={`absolute top-0 left-full ml-2 w-80 bg-white rounded-xl shadow-2xl border border-slate-100 p-3 transition-all duration-200 ${
+                                      hoverSub === "vr"
+                                        ? "opacity-100 translate-x-0 visible"
+                                        : "opacity-0 translate-x-2 invisible"
+                                    }`}
+                                    onMouseEnter={() => setHoverSub("vr")}
+                                    onMouseLeave={() => setHoverSub(null)}
+                                  >
+                                    <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold px-1 mb-2">
+                                      {t.nav.sub.vr}
+                                    </div>
+                                    <div className="space-y-2">
+                                      {vrSubItems.map((vr) => (
+                                        <button
+                                          key={vr.id}
+                                          onClick={() => {
+                                            navigate(vr.id);
+                                            setOpen(false);
+                                          }}
+                                          className={`w-full text-left px-3 py-2 rounded-lg border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-colors ${
+                                            currentPage === vr.id
+                                              ? "border-emerald-300 bg-emerald-50"
+                                              : ""
+                                          }`}
+                                        >
+                                          <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold">
+                                            {vr.icon}
+                                            <span>{vr.tag}</span>
+                                          </div>
+                                          <div className="font-bold text-slate-900 text-sm leading-tight mt-1">
+                                            {vr.label}
+                                          </div>
+                                        </button>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
@@ -334,4 +417,3 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
     </nav>
   );
 };
-

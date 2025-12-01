@@ -17,6 +17,9 @@ import { MusicFestivalPage } from "./pages/MusicFestivalPage.jsx";
 import { ServicesOverviewPage } from "./pages/ServicesOverviewPage.jsx";
 import { TechPage } from "./pages/TechPage.jsx";
 import { VRHealingPage } from "./pages/VRHealingPage.jsx";
+import { VRHappyTherapyPage } from "./pages/VRHappyTherapyPage.jsx";
+import { VREvaluationPage } from "./pages/VREvaluationPage.jsx";
+import { VRModulesPage } from "./pages/VRModulesPage.jsx";
 import { WellnessLivingPage } from "./pages/WellnessLivingPage.jsx";
 
 const App = () => {
@@ -51,6 +54,12 @@ const App = () => {
         return <MusicFestivalPage navigate={navigate} t={t} />;
       case "vr-healing":
         return <VRHealingPage navigate={navigate} t={t} />;
+      case "vr-assessment":
+        return <VREvaluationPage navigate={navigate} t={t} />;
+      case "vr-happy":
+        return <VRHappyTherapyPage navigate={navigate} t={t} />;
+      case "vr-modules":
+        return <VRModulesPage navigate={navigate} t={t} />;
       case "global-study":
         return <GlobalStudyPage navigate={navigate} t={t} />;
       case "wellness-living":
@@ -93,4 +102,3 @@ const App = () => {
 };
 
 export default App;
-

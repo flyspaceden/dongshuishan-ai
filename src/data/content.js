@@ -27,6 +27,9 @@ export const DATA = {
       sub: {
         festival: "国际时尚音乐节",
         vr: "VR 心理疗愈",
+        vrAssessment: "情绪状态评估",
+        vrHappy: "心理疗愈快乐疗法",
+        vrModules: "心理疗愈 AI 模块与安全",
         study: "国际研学",
         living: "康养旅居",
         tea: "东水茶",
@@ -345,6 +348,271 @@ export const DATA = {
           },
         ],
       },
+      vrAssessment: {
+        title: "情绪状态评估中心",
+        sub: "EMOTIONAL SCAN",
+        heroTitle: "5 分钟多模态评估\n定位情绪与风险",
+        heroDesc:
+          "结合文字/语音输入、情感计算与量表模型，快速生成情绪画像与风险提示，给出下一步疗愈建议。",
+        heroImage:
+          "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1600&h=900&q=80",
+        ctaPrimary: "立即评估",
+        ctaSecondary: "预约深度筛查",
+        quickTags: ["失眠", "社交恐惧", "职场压力", "青少年情绪", "家庭关系"],
+        inputsTitle: "输入方式与偏好",
+        inputs: [
+          {
+            title: "文字描述",
+            desc: "输入心情与困扰，AI 自动提取情绪关键词与语义倾向。",
+            tags: ["焦虑", "失眠", "压力", "孤独感"],
+          },
+          {
+            title: "语音倾诉",
+            desc: "30 秒语音自动转写 + 声学特征分析，捕捉音调、语速、停顿变化。",
+            tags: ["语速", "音调", "停顿", "情绪波动"],
+          },
+        ],
+        flowTitle: "评估流程",
+        flow: [
+          {
+            title: "情绪检测",
+            desc: "识别焦虑/抑郁/压力强度，提取情绪关键词与方向。",
+          },
+          {
+            title: "风险筛查",
+            desc: "针对失眠、社交恐惧、职场压力等场景，提示高危信号与求助建议。",
+          },
+          {
+            title: "需求定位",
+            desc: "判断核心诉求：情绪疏导 / 认知调整 / 行为干预，匹配疗愈偏好。",
+          },
+          {
+            title: "报告生成",
+            desc: "输出量化得分、情绪波动曲线、触发点标记与推荐的下一步动作。",
+          },
+        ],
+        techTitle: "AI 技术支撑",
+        tech: [
+          {
+            title: "NLP 情感计算",
+            desc: "基于 5 万+ 量表数据训练，识别语义倾向与情绪强度。",
+          },
+          {
+            title: "语音情绪分析",
+            desc: "ASR + 声学特征（音调、语速、停顿）检测情绪波动与张力。",
+          },
+          {
+            title: "多模态融合",
+            desc: "文本/语音/面部数据融合，提升评估准确率与稳定性。",
+          },
+        ],
+        resultsTitle: "结果呈现",
+        results: [
+          { title: "风险级别", desc: "低/中/高分级，附即刻自护动作与专业求助指引。" },
+          { title: "情绪波动", desc: "7 天趋势曲线 + 关键事件标记，定位触发点。" },
+          {
+            title: "下一步动作",
+            desc: "推荐冥想引导、CBT 训练、VR 场景或人工转介路径。",
+          },
+        ],
+        safety: {
+          title: "隐私与安全",
+          points: [
+            "AES-256 加密存储",
+            "敏感数据可选本地计算，不上云",
+            "自定义数据保留时长与分享范围",
+          ],
+        },
+      },
+      vrHappy: {
+        title: "心理疗愈快乐疗法",
+        sub: "JOYFUL HEALING",
+        heroTitle: "把疗愈变成愉快的日常\nAI 伴你重建情绪弹性",
+        heroDesc:
+          "基于评估结果，动态生成“好玩且有效”的疗愈组合：冥想、CBT、VR 场景、情绪涂鸦、游戏化任务，持续反馈迭代。",
+        heroImage:
+          "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2069&auto=format&fit=crop",
+        ctaPrimary: "生成专属方案",
+        ctaSecondary: "预约体验",
+        pillars: [
+          {
+            title: "快乐导向",
+            desc: "让疗愈像游戏与日常练习，降低抵触感与流失率。",
+          },
+          {
+            title: "动态适配",
+            desc: "依据情绪波动与完成度，自动调整内容节奏与难度。",
+          },
+          {
+            title: "陪伴共情",
+            desc: "语音/文字双通道虚拟陪伴，随时回应、鼓励与提醒。",
+          },
+        ],
+        matrixTitle: "互动内容矩阵",
+        matrix: [
+          {
+            tag: "冥想 + 呼吸",
+            title: "音频正念练习",
+            desc: "20 分钟随时开启，支持自然声场与节奏指导。",
+          },
+          {
+            tag: "CBT 训练",
+            title: "认知/行为卡片",
+            desc: "认知重构、暴露脱敏、情绪 ABC 记录，引导式完成。",
+          },
+          {
+            tag: "情绪日记",
+            title: "情绪涂鸦 + 日记",
+            desc: "图文/语音记录，一键生成情绪摘要与温和反馈。",
+          },
+          {
+            tag: "VR 场景",
+            title: "沉浸放松环境",
+            desc: "茶园、竹林、海岸等 1:1 场景，渐进式放松或脱敏。",
+          },
+          {
+            tag: "游戏化",
+            title: "7 天打卡任务",
+            desc: "情绪管理、睡眠仪式感、社交练习，奖励驱动坚持。",
+          },
+          {
+            tag: "即时关怀",
+            title: "舒缓 + 求助通道",
+            desc: "检测高压即刻推送舒缓内容，并提供求助入口。",
+          },
+        ],
+        planTitle: "方案生成与迭代",
+        plan: [
+          { title: "1. 画像与偏好", desc: "读取评估结果 + 选择偏好（冥想/对话/VR/游戏化）。" },
+          { title: "2. 方案生成", desc: "组合每日/每周练习，确定频次、时长与难度曲线。" },
+          { title: "3. 互动实践", desc: "AI 陪伴师语音/文字引导，实时收集反馈。" },
+          { title: "4. 反馈迭代", desc: "依据情绪曲线与完成度，自动调整内容与节奏。" },
+        ],
+        scenarioTitle: "多场景适配",
+        scenarios: [
+          {
+            title: "个人自助（B2C）",
+            desc: "随时开启冥想/VR 放松或对话疏导，适合失眠、焦虑、低落。",
+            badge: "随时随地",
+          },
+          {
+            title: "心理机构（B2B）",
+            desc: "标准化疗愈路径与内容库，嵌入机构的线上随访流程。",
+            badge: "可集成",
+          },
+          {
+            title: "企业 EAP（B2B2C）",
+            desc: "员工减压舱 + 心理 CT 体检 + 周/季报告，降低离职与倦怠。",
+            badge: "团队版",
+          },
+        ],
+        metricsTitle: "成效追踪",
+        metrics: [
+          { label: "坚持度", value: "87%", desc: "7 天打卡完成率" },
+          { label: "睡眠改善", value: "-32%", desc: "入睡时长下降" },
+          { label: "情绪张力", value: "-28%", desc: "高压情绪下降" },
+        ],
+      },
+      vrModules: {
+        title: "心理疗愈 AI 模块与安全全景",
+        sub: "SYSTEM BLUEPRINT",
+        heroTitle: "“评估-疗愈-互动-追踪-安全”\n一体化闭环",
+        heroDesc:
+          "将评估、内容推荐、实时陪伴、效果监测与隐私安全打通，支持个人、机构与企业的多场景落地。",
+        heroImage:
+          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2069&auto=format&fit=crop",
+        flowTitle: "一体化闭环",
+        flow: [
+          {
+            title: "智能评估",
+            desc: "多模态情绪检测与需求定位，生成基线画像。",
+          },
+          {
+            title: "个性化疗愈",
+            desc: "内容推荐 + 强化学习，持续优化节奏与形式。",
+          },
+          {
+            title: "实时互动",
+            desc: "对话陪伴、训练打卡、紧急干预一体化。",
+          },
+          {
+            title: "效果追踪",
+            desc: "情绪曲线、完成率、量表对比，周期报告。",
+          },
+          {
+            title: "隐私安全",
+            desc: "加密存储、本地计算、联邦学习、分级权限。",
+          },
+        ],
+        modulesTitle: "核心模块",
+        modules: [
+          {
+            name: "智能情绪评估",
+            features: [
+              "文字/语音情绪检测，识别焦虑、抑郁、压力",
+              "场景化风险筛查与报告生成",
+            ],
+            tech: "NLP 情感分析 + 语音情绪 + 量表模型",
+          },
+          {
+            name: "个性化疗愈方案",
+            features: [
+              "动态方案生成与内容推荐",
+              "冥想、CBT、情绪日记、VR 场景组合",
+            ],
+            tech: "强化学习 + 推荐引擎 + AR/VR 渲染",
+          },
+          {
+            name: "实时互动疗愈",
+            features: [
+              "AI 虚拟陪伴师文字/语音共情",
+              "结构化训练任务与紧急干预提醒",
+            ],
+            tech: "对话生成模型 + 风险预警算法",
+          },
+          {
+            name: "疗效监测与报告",
+            features: [
+              "情绪波动曲线、任务完成率、评分对比",
+              "周/月报告与干预建议",
+            ],
+            tech: "可视化算法 + 对比分析模型",
+          },
+          {
+            name: "隐私安全中心",
+            features: [
+              "AES-256 加密、本地计算可选",
+              "分级权限、联邦学习不触碰原始数据",
+            ],
+            tech: "联邦学习框架 + 权限管理系统",
+          },
+        ],
+        privacy: {
+          title: "数据与隐私保护",
+          desc: "敏感数据优先本地处理，云侧只存加密特征；支持选择保留时长与分享范围。",
+          points: [
+            "AES-256 加密存储，访问全程审计",
+            "可切换本地计算/云端协同，避免裸数据外泄",
+            "联邦学习训练模型不触碰原始数据",
+            "分级权限：用户/咨询师/企业管理员按需可见",
+          ],
+        },
+        caseTitle: "应用成效",
+        cases: [
+          {
+            title: "个人用户",
+            result: "情绪张力 -30%，睡眠改善 +27%，7 天打卡完成率 85%",
+          },
+          {
+            title: "心理机构",
+            result: "线上随访效率 +45%，标准化方案沉淀 120+ 套",
+          },
+          {
+            title: "企业 EAP",
+            result: "高压预警提前 1.8 周，团队倦怠度 -22%",
+          },
+        ],
+      },
       study: {
         title: "东水山国际研学与文化交流基地",
         sub: "GLOBAL EDUCATION",
@@ -574,6 +842,9 @@ export const DATA = {
       sub: {
         festival: "Fashion Music Festival",
         vr: "VR Healing",
+        vrAssessment: "Emotional Assessment",
+        vrHappy: "Joyful Healing Path",
+        vrModules: "Healing AI Modules & Safety",
         study: "Global Study",
         living: "Wellness Living",
         tea: "Dongshui Tea",
@@ -914,6 +1185,295 @@ export const DATA = {
             name: "Autism Rehabilitation",
             desc: "AI interactive training supported by Turing team",
             price: "Charity Funded",
+          },
+        ],
+      },
+      vrAssessment: {
+        title: "Emotional Status Assessment",
+        sub: "EMOTIONAL SCAN",
+        heroTitle: "5-Min Multimodal Scan\nSpot Mood & Risk Quickly",
+        heroDesc:
+          "Blends text/voice input, affective computing, and scale-trained models to generate mood portraits, risk alerts, and the next best action.",
+        heroImage:
+          "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1600&h=900&q=80",
+        ctaPrimary: "Start Assessment",
+        ctaSecondary: "Book Deep Screening",
+        inputsTitle: "Input & Preference",
+        quickTags: [
+          "Insomnia",
+          "Social Anxiety",
+          "Work Stress",
+          "Teen Mood",
+          "Family Dynamics",
+        ],
+        inputs: [
+          {
+            title: "Text Journal",
+            desc: "Describe feelings; AI extracts mood keywords and sentiment direction.",
+            tags: ["Anxiety", "Sleep", "Stress", "Loneliness"],
+          },
+          {
+            title: "Voice Reflection",
+            desc: "30-second audio; auto transcription plus tone, speed, and pause analysis.",
+            tags: ["Pace", "Pitch", "Pauses", "Mood Swings"],
+          },
+        ],
+        flowTitle: "Assessment Flow",
+        flow: [
+          {
+            title: "Emotion Detection",
+            desc: "Detects anxiety/depression/stress intensity and highlights key emotions.",
+          },
+          {
+            title: "Risk Screening",
+            desc: "Flags high-risk signals for insomnia, social fear, work burnout with guidance.",
+          },
+          {
+            title: "Need Mapping",
+            desc: "Clarifies core intent: soothing, cognitive reframing, or behavior change.",
+          },
+          {
+            title: "Report Delivery",
+            desc: "Scores, 7-day curves, trigger markers, and recommended next actions.",
+          },
+        ],
+        techTitle: "AI Stack",
+        tech: [
+          {
+            title: "NLP Affective Modeling",
+            desc: "Trained on 50k+ scales to read semantic intent and emotional strength.",
+          },
+          {
+            title: "Voice Emotion Analytics",
+            desc: "ASR plus acoustic features (pitch, pace, pauses) to catch tension shifts.",
+          },
+          {
+            title: "Multimodal Fusion",
+            desc: "Merges text/voice/facial cues to boost accuracy and stability.",
+          },
+        ],
+        resultsTitle: "What You Get",
+        results: [
+          {
+            title: "Risk Level",
+            desc: "Low/Medium/High with immediate self-care steps and referral tips.",
+          },
+          {
+            title: "Mood Curve",
+            desc: "7-day trend with key-event markers to pinpoint triggers.",
+          },
+          {
+            title: "Next Moves",
+            desc: "Suggests meditation, CBT drills, VR scenes, or human referral.",
+          },
+        ],
+        safety: {
+          title: "Privacy & Safety",
+          points: [
+            "AES-256 encrypted storage",
+            "Local processing option for sensitive data",
+            "User-defined retention window and sharing scope",
+          ],
+        },
+      },
+      vrHappy: {
+        title: "Joyful Healing Path",
+        sub: "JOYFUL HEALING",
+        heroTitle: "Make Healing Feel Good\nAI Keeps You Engaged & Resilient",
+        heroDesc:
+          "Turns assessments into playful-yet-effective blends: meditation, CBT drills, VR calm scenes, mood doodles, and game-like tasks—continuously adapted by feedback.",
+        heroImage:
+          "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2069&auto=format&fit=crop",
+        ctaPrimary: "Build My Plan",
+        ctaSecondary: "Book a Session",
+        matrixTitle: "Interactive Content Matrix",
+        pillars: [
+          {
+            title: "Joy-First",
+            desc: "Gameful, gentle rituals lower resistance and drop-out.",
+          },
+          {
+            title: "Adaptive Rhythm",
+            desc: "Paces content by mood swings and completion data.",
+          },
+          {
+            title: "Empathic Companion",
+            desc: "Voice/text copilot that nudges, cheers, and reminds.",
+          },
+        ],
+        matrix: [
+          {
+            tag: "Breath & Calm",
+            title: "Guided Mindfulness",
+            desc: "20-min audio with nature soundbeds and breath pacing.",
+          },
+          {
+            tag: "CBT",
+            title: "Cognitive/Behavior Cards",
+            desc: "Reframing, exposure, and ABC logs with stepwise prompts.",
+          },
+          {
+            tag: "Mood Diary",
+            title: "Mood Doodles & Notes",
+            desc: "Voice/text sketches auto-summarized with gentle feedback.",
+          },
+          {
+            tag: "VR Scenes",
+            title: "Immersive Relaxation",
+            desc: "Tea gardens, bamboo, seaside—graded calm or exposure.",
+          },
+          {
+            tag: "Gamified",
+            title: "7-Day Challenge",
+            desc: "Emotion hygiene, sleep rituals, social drills with rewards.",
+          },
+          {
+            tag: "Rapid Soothe",
+            title: "Calm + Help Line",
+            desc: "Pushes soothing content on stress spikes, plus help channel.",
+          },
+        ],
+        planTitle: "Plan & Adaptation",
+        plan: [
+          {
+            title: "1. Profile & Preference",
+            desc: "Read assessment + choose styles (meditation/chat/VR/gamified).",
+          },
+          {
+            title: "2. Plan Generation",
+            desc: "Compose daily/weekly actions with cadence and difficulty curve.",
+          },
+          {
+            title: "3. Guided Practice",
+            desc: "AI companion via voice/text; collects micro-feedback.",
+          },
+          {
+            title: "4. Adaptive Tuning",
+            desc: "Adjusts content based on mood curve and completion.",
+          },
+        ],
+        scenarioTitle: "Multi-Scenario",
+        scenarios: [
+          {
+            title: "Individuals (B2C)",
+            desc: "On-demand calm VR, meditation, or chat—fit for insomnia, anxiety, low mood.",
+            badge: "Anytime",
+          },
+          {
+            title: "Clinics (B2B)",
+            desc: "Standardized pathways and content packs that plug into follow-ups.",
+            badge: "Integrable",
+          },
+          {
+            title: "Enterprise EAP (B2B2C)",
+            desc: "Relax pods + psychological CT + reports to curb burnout and attrition.",
+            badge: "Team",
+          },
+        ],
+        metricsTitle: "Impact",
+        metrics: [
+          { label: "Adherence", value: "87%", desc: "7-day streak completion" },
+          { label: "Sleep Onset", value: "-32%", desc: "Faster time to sleep" },
+          { label: "Stress Load", value: "-28%", desc: "Drop in high-tension episodes" },
+        ],
+      },
+      vrModules: {
+        title: "Healing AI Modules & Safety",
+        sub: "SYSTEM BLUEPRINT",
+        heroTitle: "Assess · Heal · Interact · Track · Protect\nOne Cohesive Loop",
+        heroDesc:
+          "Connects assessment, recommendations, live companion, outcome tracking, and privacy guardrails for B2C, B2B, and EAP scenarios.",
+        heroImage:
+          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2069&auto=format&fit=crop",
+        flowTitle: "End-to-End Loop",
+        flow: [
+          {
+            title: "Smart Assessment",
+            desc: "Multimodal emotion check and intent mapping to form the baseline.",
+          },
+          {
+            title: "Personalized Healing",
+            desc: "Recommendation + reinforcement learning to tune pace and format.",
+          },
+          {
+            title: "Live Interaction",
+            desc: "Copilot chat, training streaks, and rapid intervention.",
+          },
+          {
+            title: "Outcome Tracking",
+            desc: "Mood curves, completion, score deltas, and periodic reports.",
+          },
+          {
+            title: "Privacy Guard",
+            desc: "Encryption, local-first option, federated learning, role-based access.",
+          },
+        ],
+        modulesTitle: "Core Modules",
+        modules: [
+          {
+            name: "Emotion Assessment",
+            features: [
+              "Text/voice emotion detection for anxiety, depression, stress",
+              "Scenario risk screening with instant reports",
+            ],
+            tech: "NLP sentiment + voice emotion + scale-trained models",
+          },
+          {
+            name: "Personalized Plans",
+            features: [
+              "Dynamic plan generation and content recommendations",
+              "Meditation, CBT, mood diary, VR scenes in one mix",
+            ],
+            tech: "Reinforcement learning + recommender + AR/VR rendering",
+          },
+          {
+            name: "Interactive Healing",
+            features: [
+              "AI companion via text/voice with empathetic tone",
+              "Structured tasks and emergency soothe alerts",
+            ],
+            tech: "Dialogue generation + risk alerting models",
+          },
+          {
+            name: "Effect Monitoring",
+            features: [
+              "Mood curves, completion, score comparison",
+              "Weekly/monthly reports with intervention tips",
+            ],
+            tech: "Data visualization + comparative analytics",
+          },
+          {
+            name: "Privacy & Security Hub",
+            features: [
+              "AES-256 encryption, local processing option",
+              "Role-based access, federated learning without raw data",
+            ],
+            tech: "Federated learning stack + access control",
+          },
+        ],
+        privacy: {
+          title: "Data & Privacy",
+          desc: "Sensitive data stays local-first; cloud only stores encrypted features. Users choose retention and sharing scope.",
+          points: [
+            "AES-256 encrypted storage with full audit trail",
+            "Switchable local/edge vs. cloud co-processing to avoid raw leaks",
+            "Federated learning trains models without raw data exposure",
+            "Role-based access: user / counselor / enterprise admin",
+          ],
+        },
+        caseTitle: "Impact Highlights",
+        cases: [
+          {
+            title: "Individuals",
+            result: "-30% stress load, +27% sleep quality, 85% weekly streak",
+          },
+          {
+            title: "Clinics",
+            result: "+45% follow-up efficiency, 120+ standardized protocols",
+          },
+          {
+            title: "Enterprise EAP",
+            result: "1.8-week earlier risk alerts, -22% team burnout",
           },
         ],
       },
