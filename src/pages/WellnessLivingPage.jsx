@@ -3,6 +3,7 @@ import { Building2, Coffee, Home, Stethoscope, Sun, Wifi } from "lucide-react";
 
 import { BackButton, Button, SectionHeader } from "../components/ui";
 import yogaImage from "../assets/images/核心业务/康养旅居/瑜伽.jpg";
+import livingImage from "../assets/images/核心业务/康养旅居/康养旅居1.jpg";
 
 export const WellnessLivingPage = ({ navigate, t }) => {
   const content = t.pages.living;
@@ -49,7 +50,7 @@ export const WellnessLivingPage = ({ navigate, t }) => {
           </div>
           <div className="rounded-2xl overflow-hidden relative group">
             <img
-              src="/src/assets/images/核心业务/康养旅居/康养旅居1.jpg"
+              src={livingImage}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               alt="Wellness Residence"
             />
