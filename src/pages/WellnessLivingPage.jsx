@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Coffee, Home, Stethoscope, Sun, Wifi } from "lucide-react";
+import { Building2, Coffee, Home, Stethoscope, Sun, Wifi } from "lucide-react";
 
 import { BackButton, Button, SectionHeader } from "../components/ui";
 import yogaImage from "../assets/images/核心业务/康养旅居/瑜伽.jpg";
 
 export const WellnessLivingPage = ({ navigate, t }) => {
   const content = t.pages.living;
+  const estate = t.pages.estate;
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,13 +47,42 @@ export const WellnessLivingPage = ({ navigate, t }) => {
               alt="Yoga"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden bg-slate-200 flex items-center justify-center text-slate-400 text-sm font-bold cursor-pointer hover:bg-slate-300 transition-colors flex-col gap-2">
-            <Home size={32} />
+          <div className="rounded-2xl overflow-hidden relative group">
+            <img
+              src="/src/assets/images/核心业务/康养旅居/康养旅居1.jpg"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Wellness Residence"
+            />
           </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2 space-y-12">
+            <section className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-center">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <Building2 size={28} />
+              </div>
+              <div className="flex-1 space-y-2">
+                <div className="text-xs uppercase tracking-widest text-slate-400 font-bold">
+                  {estate.sub}
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">{estate.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{estate.heroDesc}</p>
+                <div className="flex flex-wrap gap-2 text-xs text-emerald-700">
+                  {estate.stats?.slice(0, 3).map((s, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100"
+                    >
+                      {s.value} · {s.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Button variant="primary" className="flex-shrink-0" onClick={() => navigate("wellness-estate")}>
+                {t.common.btnDetail}
+              </Button>
+            </section>
             <section>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
                 {content.introTitle}
@@ -111,4 +141,3 @@ export const WellnessLivingPage = ({ navigate, t }) => {
     </motion.div>
   );
 };
-

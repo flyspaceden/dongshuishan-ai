@@ -20,6 +20,7 @@ import { VRHealingPage } from "./pages/VRHealingPage.jsx";
 import { VRHappyTherapyPage } from "./pages/VRHappyTherapyPage.jsx";
 import { VREvaluationPage } from "./pages/VREvaluationPage.jsx";
 import { VRModulesPage } from "./pages/VRModulesPage.jsx";
+import { WellnessEstatePage } from "./pages/WellnessEstatePage.jsx";
 import { WellnessLivingPage } from "./pages/WellnessLivingPage.jsx";
 
 const App = () => {
@@ -64,6 +65,8 @@ const App = () => {
         return <GlobalStudyPage navigate={navigate} t={t} />;
       case "wellness-living":
         return <WellnessLivingPage navigate={navigate} t={t} />;
+      case "wellness-estate":
+        return <WellnessEstatePage navigate={navigate} t={t} />;
       case "tea":
         return <DongshuiTeaPage navigate={navigate} t={t} />;
       case "contact":

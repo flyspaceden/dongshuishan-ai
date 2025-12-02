@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, GraduationCap, Home, Leaf, Music } from "lucide-react";
+import { ArrowRight, Brain, Building2, GraduationCap, Home, Leaf, Music } from "lucide-react";
 
 import { Button, SectionHeader } from "../components/ui";
 import teaProductImage2 from "../assets/images/核心业务/东水茶/东水茶2.jpg";
@@ -143,6 +143,56 @@ export const ServicesOverviewPage = ({ navigate, t }) => {
               >
                 {t.common.btnDetail} <ArrowRight size={16} />
               </Button>
+              <div className="mt-4">
+                <Button
+                  variant="primary"
+                  onClick={() => navigate("wellness-estate")}
+                  className="gap-2"
+                >
+                  {t.pages.estate?.sub || "WELLNESS REAL ESTATE"}{" "}
+                  <ArrowRight size={16} />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3.1 Wellness Estate */}
+        <div id="estate" className="mb-24 scroll-mt-28">
+          <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
+            <div className="md:w-1/2">
+              <img
+                src={
+                  t.pages.estate?.gallery?.[0] ||
+                  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80"
+                }
+                alt="Wellness Estate"
+                className="rounded-3xl shadow-xl w-full"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6">
+                <Building2 />
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 mb-4">
+                {content.estate?.title || t.nav.sub.estate}
+              </h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                {content.estate?.heroDesc}
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6 text-xs text-slate-500">
+                {content.estate?.stats?.slice(0, 3).map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-emerald-50 rounded-full border border-emerald-100"
+                  >
+                    {item.value} · {item.label}
+                  </span>
+                ))}
+              </div>
+              <Button variant="primary" onClick={() => navigate("wellness-estate")}>
+                {t.common.btnDetail} <ArrowRight size={16} />
+              </Button>
             </div>
           </div>
         </div>
@@ -177,4 +227,3 @@ export const ServicesOverviewPage = ({ navigate, t }) => {
     </motion.div>
   );
 };
-

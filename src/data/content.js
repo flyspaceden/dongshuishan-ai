@@ -32,6 +32,7 @@ export const DATA = {
         vrModules: "心理疗愈 AI 模块与安全",
         study: "国际研学",
         living: "康养旅居",
+        estate: "康养地产",
         tea: "东水茶",
       },
     },
@@ -691,6 +692,98 @@ export const DATA = {
           { name: "候鸟年卡", price: "咨询客服" },
         ],
       },
+      estate: {
+        title: "康养地产 · 智慧社区",
+        sub: "WELLNESS REAL ESTATE",
+        heroTitle: "150 亩配套用地 · 12 万㎡低密度生态住区",
+        heroDesc:
+          "容积率 1.2 的低密康养住区，以茶园/水库景观为核心，规划三大产品系与全周期康养配套，打造“推窗见绿，出门进园”的智慧康养社区。",
+        stats: [
+          { label: "用地规模", value: "150 亩", desc: "民居旧改 + 配套用地" },
+          { label: "总建筑面积", value: "约 12 万㎡", desc: "容积率 1.2 · 低密标准" },
+          { label: "产品矩阵", value: "3 大系", desc: "公寓 / 独栋 / 配套设施" },
+          { label: "园区绿化率", value: "40%", desc: "雨水回收 + 太阳能供电" },
+        ],
+        productsTitle: "三大核心产品系",
+        products: [
+          {
+            name: "康养公寓 · 6 万㎡",
+            area: "户型 60-90㎡",
+            desc: "面向退休康养与长期健康管理人群，户户南向通透，推窗见茶园/水库，配备适老化卫浴、紧急呼叫系统与基础健康采集端。",
+            highlights: [
+              "全南向通透采光",
+              "茶园 / 水库生态景观",
+              "适老化卫浴 + 紧急呼叫",
+              "AI 健康数据接入",
+            ],
+          },
+          {
+            name: "独栋康养别墅 · 3 万㎡",
+            area: "户型 120-180㎡",
+            desc: "高端定制产品，限量 50 套。每户配备私人庭院、独立茶疗空间、智能健康监测终端，可定制照护动线与无障碍设计。",
+            highlights: [
+              "私人庭院 + 独立茶疗空间",
+              "智能健康监测终端",
+              "独立车位与储物空间",
+              "可定制养老照护动线",
+            ],
+          },
+          {
+            name: "配套服务设施 · 3 万㎡",
+            area: "健康管理中心 / 活动 / 食堂",
+            desc: "联动在建卫生院，配置健康管理中心、老年活动中心、生态康养步道、有机食堂、社区医疗服务站、亲子互动区，实现“居住 + 康养 + 社交”闭环。",
+            highlights: [
+              "健康管理中心 + 康复理疗",
+              "24 小时社区医疗站",
+              "有机食堂 · 富硒农品",
+              "2 公里茶园康养步道",
+            ],
+          },
+        ],
+        servicesTitle: "全周期康养服务配套",
+        services: [
+          {
+            title: "健康管理中心",
+            desc: "联动在建卫生院，体检、慢病管理、康复理疗一体化。",
+          },
+          {
+            title: "老年活动中心",
+            desc: "社交、兴趣课堂、日间照护，丰富长者生活。",
+          },
+          {
+            title: "社区医疗服务站",
+            desc: "24 小时值班值守，紧急情况联动卫生院住院部。",
+          },
+          { title: "有机食堂", desc: "供应富硒农产品，AI 营养配餐定制。" },
+          { title: "亲子互动区", desc: "跨代陪伴场景，兼顾度假体验。" },
+          { title: "生态康养步道", desc: "围绕茶园打造 2 公里环形步道/助行道。" },
+        ],
+        smartTitle: "智慧社区配置",
+        smartFeatures: [
+          {
+            title: "居家健康监测",
+            desc: "每户安装 AI 生物传感设备，监测心率、血压、睡眠、活动轨迹，数据实时同步大健康平台，异常自动预警到医疗站及家属。",
+          },
+          {
+            title: "智能生活服务",
+            desc: "AI 语音助手、人体感应照明、远程家电操控，适配长者使用习惯；社区无人配送车，药品/生鲜/快递上门。",
+          },
+          {
+            title: "生态融合设计",
+            desc: "绿色建材 + 雨水回收 + 太阳能供电，园区绿化率 40%，推窗见绿、出门进园。",
+          },
+        ],
+        galleryTitle: "生态居住场景图集",
+        gallery: [
+          "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=2000&q=80",
+        ],
+        ctaTitle: "预约康养地产考察",
+        ctaDesc: "留下联系方式，获取样板房开放时间与购房优惠权益。",
+      },
       tea: {
         title: "东水茶 · 广东十大名茶",
         sub: "DONGSHUI TEA",
@@ -847,6 +940,7 @@ export const DATA = {
         vrModules: "Healing AI Modules & Safety",
         study: "Global Study",
         living: "Wellness Living",
+        estate: "Wellness Estate",
         tea: "Dongshui Tea",
       },
     },
@@ -1555,6 +1649,101 @@ export const DATA = {
           { name: "Wellness Month (30 Days)", price: "From ¥ 8,800" },
           { name: "Migratory Bird Annual Pass", price: "Contact Us" },
         ],
+      },
+      estate: {
+        title: "Wellness Estate & Smart Community",
+        sub: "WELLNESS REAL ESTATE",
+        heroTitle: "150-Mu Wellness Land · 120,000㎡ Low-Density Community",
+        heroDesc:
+          "A FAR 1.2 eco community centered on tea garden and reservoir views. Three core product lines plus full-cycle wellness facilities create a “green-out-the-window, park-at-your-doorstep” smart habitat.",
+        stats: [
+          { label: "Land Size", value: "150 mu", desc: "Village renewal + community land" },
+          { label: "GFA", value: "≈120,000㎡", desc: "FAR 1.2 · low density" },
+          { label: "Product Mix", value: "3 Lines", desc: "Apartments / Villas / Facilities" },
+          { label: "Greening", value: "40%", desc: "Rainwater reuse + solar power" },
+        ],
+        productsTitle: "Three Core Product Lines",
+        products: [
+          {
+            name: "Wellness Apartments · 60,000㎡",
+            area: "Unit size 60-90㎡",
+            desc: "For retirees and long-term health managers. All south-facing with tea garden/reservoir views, elder-friendly bathrooms, emergency call, and baseline health data terminals.",
+            highlights: [
+              "South-facing, cross ventilation",
+              "Tea garden / reservoir views",
+              "Age-friendly bathrooms + SOS",
+              "AI health data connectivity",
+            ],
+          },
+          {
+            name: "Detached Wellness Villas · 30,000㎡",
+            area: "Unit size 120-180㎡",
+            desc: "Limited to 50 bespoke homes. Each offers a private courtyard, dedicated tea-therapy space, smart health monitoring hub, with customizable care routes and accessibility.",
+            highlights: [
+              "Private courtyard + tea-therapy room",
+              "Smart health monitoring terminal",
+              "Dedicated parking & storage",
+              "Customizable care-friendly layout",
+            ],
+          },
+          {
+            name: "Support Facilities · 30,000㎡",
+            area: "Health center / Activity / Dining",
+            desc: "Connected to the under-construction township hospital. Includes health management center, senior activity hub, 2km eco trail, organic dining hall, 24/7 clinic, and family play zone for a living + wellness + social loop.",
+            highlights: [
+              "Health center + rehab services",
+              "24/7 community clinic",
+              "Organic dining · selenium-rich food",
+              "2km tea-garden wellness loop",
+            ],
+          },
+        ],
+        servicesTitle: "Full-Cycle Wellness Facilities",
+        services: [
+          {
+            title: "Health Management Center",
+            desc: "Physicals, chronic disease management, rehab, linked to the new inpatient building.",
+          },
+          {
+            title: "Senior Activity Hub",
+            desc: "Social programs, interest classes, and day care to enrich daily life.",
+          },
+          {
+            title: "Community Clinic",
+            desc: "24/7 staffed; emergency linkage to the township hospital.",
+          },
+          {
+            title: "Organic Dining Hall",
+            desc: "Selenium-rich farm-to-table meals with AI nutrition plans.",
+          },
+          { title: "Family Play Zone", desc: "Intergenerational bonding and vacation vibes." },
+          { title: "Eco Wellness Trail", desc: "2km loop along the tea garden for strolls or jogging." },
+        ],
+        smartTitle: "Smart Community Stack",
+        smartFeatures: [
+          {
+            title: "In-Home Health Monitoring",
+            desc: "AI biosensors track heart rate, blood pressure, sleep, and activity. Data syncs to the health cloud with auto alerts to the clinic and family.",
+          },
+          {
+            title: "Intelligent Living Services",
+            desc: "Voice assistants, motion-sensing lights, remote appliances, plus autonomous delivery carts for meds, groceries, and parcels.",
+          },
+          {
+            title: "Eco-Integrated Design",
+            desc: "Green materials, rainwater harvesting, solar power, and 40% greenery for window-to-green views and park-on-doorstep living.",
+          },
+        ],
+        galleryTitle: "Eco-Living Gallery",
+        gallery: [
+          "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=2000&q=80",
+          "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=2000&q=80",
+        ],
+        ctaTitle: "Book a Site Tour",
+        ctaDesc: "Share your contact to get show-unit opening times and buyer privileges.",
       },
       tea: {
         title: "Dongshui Tea · Top 10 Guangdong Tea",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Brain, ChevronDown, Menu, ShieldCheck, Smile, Sparkles, X } from "lucide-react";
+import { Brain, ChevronDown, Home, Menu, ShieldCheck, Smile, Sparkles, X } from "lucide-react";
 
 import { Button } from "../ui";
 
@@ -87,6 +87,15 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
       icon: <ShieldCheck size={16} className="text-blue-500" />,
     },
   ];
+  const livingSubItems = [
+    {
+      id: "wellness-estate",
+      label: t.nav.sub.estate,
+      desc: t.pages.estate.heroDesc,
+      tag: t.pages.estate.sub,
+      icon: <Home size={16} className="text-emerald-500" />,
+    },
+  ];
 
   return (
     <nav
@@ -154,6 +163,7 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                         "vr-modules",
                         "global-study",
                         "wellness-living",
+                        "wellness-estate",
                         "tea",
                       ]
                     : item.dropdownType === "about"
@@ -212,12 +222,21 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                         <div className="bg-white rounded-xl shadow-2xl border border-emerald-100/50 p-2 relative overflow-visible">
                           {item.subItems.map((sub) => {
                             const isVR = sub.id === "vr-healing";
+                            const isLiving = sub.id === "wellness-living";
+                            const isActiveSub =
+                              currentPage === sub.id ||
+                              (isLiving && currentPage === "wellness-estate");
                             return (
                               <div
                                 key={sub.id}
                                 className="relative group/sub"
-                                onMouseEnter={() => isVR && setHoverSub("vr")}
-                                onMouseLeave={() => isVR && setHoverSub(null)}
+                                onMouseEnter={() =>
+                                  (isVR || isLiving) &&
+                                  setHoverSub(isVR ? "vr" : "living")
+                                }
+                                onMouseLeave={() =>
+                                  (isVR || isLiving) && setHoverSub(null)
+                                }
                               >
                                 <button
                                   onClick={() => {
@@ -225,14 +244,14 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                                     setOpen(false);
                                   }}
                                   className={`w-full text-left px-4 py-2 text-sm rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors ${
-                                    currentPage === sub.id
+                                    isActiveSub
                                       ? "text-emerald-600 bg-emerald-50 font-medium"
                                       : "text-slate-600"
                                   }`}
                                 >
                                   <div className="flex items-center justify-between gap-2">
                                     <span>{sub.label}</span>
-                                    {sub.id === "vr-healing" && (
+                                    {(isVR || isLiving) && (
                                       <ChevronDown
                                         size={14}
                                         className="text-slate-400 transition-transform duration-200 -rotate-90 group-hover/sub:rotate-0"
@@ -273,6 +292,48 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
                                           </div>
                                           <div className="font-bold text-slate-900 text-sm leading-tight mt-1">
                                             {vr.label}
+                                          </div>
+                                        </button>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                                {isLiving && (
+                                  <div
+                                    className={`absolute top-0 left-full ml-2 w-72 bg-white rounded-xl shadow-2xl border border-slate-100 p-3 transition-all duration-200 ${
+                                      hoverSub === "living"
+                                        ? "opacity-100 translate-x-0 visible"
+                                        : "opacity-0 translate-x-2 invisible"
+                                    }`}
+                                    onMouseEnter={() => setHoverSub("living")}
+                                    onMouseLeave={() => setHoverSub(null)}
+                                  >
+                                    <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold px-1 mb-2">
+                                      {t.nav.sub.living}
+                                    </div>
+                                    <div className="space-y-2">
+                                      {livingSubItems.map((item) => (
+                                        <button
+                                          key={item.id}
+                                          onClick={() => {
+                                            navigate(item.id);
+                                            setOpen(false);
+                                          }}
+                                          className={`w-full text-left px-3 py-2 rounded-lg border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-colors ${
+                                            currentPage === item.id
+                                              ? "border-emerald-300 bg-emerald-50"
+                                              : ""
+                                          }`}
+                                        >
+                                          <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold">
+                                            {item.icon}
+                                            <span>{item.tag}</span>
+                                          </div>
+                                          <div className="font-bold text-slate-900 text-sm leading-tight mt-1">
+                                            {item.label}
+                                          </div>
+                                          <div className="text-xs text-slate-500 mt-1 leading-snug">
+                                            {item.desc}
                                           </div>
                                         </button>
                                       ))}
@@ -339,7 +400,21 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
             <div className="bg-white/95 backdrop-blur-md border border-emerald-50 rounded-2xl shadow-xl p-4 space-y-1">
               {navItems.map((item) => {
                 const isExpanded = mobileDropdown === item.id;
-                const isActive = currentPage === item.id;
+                const isActive =
+                  currentPage === item.id ||
+                  (item.id === "services" &&
+                    [
+                      "music-festival",
+                      "vr-healing",
+                      "vr-assessment",
+                      "vr-happy",
+                      "vr-modules",
+                      "global-study",
+                      "wellness-living",
+                      "wellness-estate",
+                      "tea",
+                    ].includes(currentPage)) ||
+                  (item.id === "about" && ["about", "alliance"].includes(currentPage));
 
                 return (
                   <div
@@ -376,22 +451,49 @@ export const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
 
                     {item.hasDropdown && isExpanded && (
                       <div className="flex flex-col gap-2 pb-3 pl-3">
-                        {item.subItems.map((sub) => (
-                          <button
-                            key={sub.id}
-                            onClick={() => {
-                              navigate(sub.id);
-                              setMobileMenuOpen(false);
-                            }}
-                            className={`text-left text-sm px-3 py-2 rounded-lg transition-colors ${
-                              currentPage === sub.id
-                                ? "bg-emerald-50 text-emerald-600 font-medium"
-                                : "text-slate-700 hover:bg-emerald-50"
-                            }`}
-                          >
-                            {sub.label}
-                          </button>
-                        ))}
+                        {item.subItems.map((sub) => {
+                          const isLiving = sub.id === "wellness-living";
+                          const isActiveSub =
+                            currentPage === sub.id ||
+                            (isLiving && currentPage === "wellness-estate");
+                          return (
+                            <div key={sub.id} className="flex flex-col gap-1">
+                              <button
+                                onClick={() => {
+                                  navigate(sub.id);
+                                  setMobileMenuOpen(false);
+                                }}
+                                className={`text-left text-sm px-3 py-2 rounded-lg transition-colors ${
+                                  isActiveSub
+                                    ? "bg-emerald-50 text-emerald-600 font-medium"
+                                    : "text-slate-700 hover:bg-emerald-50"
+                                }`}
+                              >
+                                {sub.label}
+                              </button>
+                              {isLiving &&
+                                livingSubItems.map((child) => {
+                                  const isActiveChild = currentPage === child.id;
+                                  return (
+                                    <button
+                                      key={child.id}
+                                      onClick={() => {
+                                        navigate(child.id);
+                                        setMobileMenuOpen(false);
+                                      }}
+                                      className={`text-left text-sm px-4 py-2 rounded-lg transition-colors border border-transparent ${
+                                        isActiveChild
+                                          ? "bg-emerald-50 text-emerald-600 font-medium border-emerald-100"
+                                          : "text-slate-700 hover:bg-emerald-50"
+                                      }`}
+                                    >
+                                      {child.label}
+                                    </button>
+                                  );
+                                })}
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

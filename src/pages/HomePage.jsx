@@ -4,6 +4,7 @@ import {
   Activity,
   ArrowRight,
   Brain,
+  Building2,
   Database,
   Globe,
   Mountain,
@@ -158,13 +159,15 @@ export const HomePage = ({ navigate, t }) => {
         <p className="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed mb-12">
           {t.pages.home.missionDesc}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           <FeatureCard
             icon={<Brain size={32} />}
             title={t.nav.sub.vr}
             desc={t.carousel[2].desc}
             onClick={() => navigate("vr-healing")}
             btnText={t.common.btnDetail}
+            image="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80"
+            alt="VR Healing"
           />
           <FeatureCard
             icon={<Sprout size={32} />}
@@ -172,6 +175,8 @@ export const HomePage = ({ navigate, t }) => {
             desc={t.carousel[1].desc}
             onClick={() => navigate("technology")}
             btnText={t.common.btnDetail}
+            image="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80"
+            alt="Smart Agriculture"
           />
           <FeatureCard
             icon={<Globe size={32} />}
@@ -179,6 +184,17 @@ export const HomePage = ({ navigate, t }) => {
             desc={t.pages.study.facDesc}
             onClick={() => navigate("global-study")}
             btnText={t.common.btnDetail}
+            image="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80"
+            alt="Global Study"
+          />
+          <FeatureCard
+            icon={<Building2 size={32} />}
+            title={`${t.nav.sub.living} · ${t.nav.sub.estate}`}
+            desc={t.pages.estate.heroDesc}
+            onClick={() => navigate("wellness-estate")}
+            btnText={t.common.btnDetail}
+            image="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
+            alt="Wellness Estate"
           />
         </div>
       </section>
