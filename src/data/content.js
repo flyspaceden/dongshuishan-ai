@@ -51,7 +51,7 @@ export const DATA = {
         image:
           "https://images.unsplash.com/photo-1563911892437-1feda9d5e54a?q=80&w=2070&auto=format&fit=crop",
         subtitle: "AI + 合成生物 + 区块链溯源",
-        title: "智慧农业 · 科技赋能",
+        title: "AI农业 · 科技赋能",
         desc: "合成生物氨基酸水肥精准灌溉，每一片东水山茶都有专属的区块链数字身份证。",
         link: "technology",
       },
@@ -693,9 +693,9 @@ export const DATA = {
         ],
       },
       estate: {
-        title: "康养地产 · 智慧社区",
+        title: "康养地产 · 智慧社区 + 康养民居",
         sub: "WELLNESS REAL ESTATE",
-        heroTitle: "150 亩配套用地 · 12 万㎡低密度生态住区",
+        heroTitle: "150 亩民居旧改 + 配套用地 · 12 万㎡低密度生态住区",
         heroDesc:
           "容积率 1.2 的低密康养住区，以茶园/水库景观为核心，规划三大产品系与全周期康养配套，打造“推窗见绿，出门进园”的智慧康养社区。",
         stats: [
@@ -959,7 +959,7 @@ export const DATA = {
         image:
           "https://images.unsplash.com/photo-1563911892437-1feda9d5e54a?q=80&w=2070&auto=format&fit=crop",
         subtitle: "AI + Synthetic Biology + Blockchain Traceability",
-        title: "Smart Agriculture · Tech Empowerment",
+        title: "AI Agriculture · Tech Empowerment",
         desc: "Precise irrigation with synthetic bio-fertilizers, every tea leaf has a blockchain digital ID.",
         link: "technology",
       },
@@ -1651,9 +1651,9 @@ export const DATA = {
         ],
       },
       estate: {
-        title: "Wellness Estate & Smart Community",
+        title: "Wellness Estate · Smart Community + Wellness Residences",
         sub: "WELLNESS REAL ESTATE",
-        heroTitle: "150-Mu Wellness Land · 120,000㎡ Low-Density Community",
+        heroTitle: "150-Mu Village Renewal + Community Land · 120,000㎡ Low-Density Community",
         heroDesc:
           "A FAR 1.2 eco community centered on tea garden and reservoir views. Three core product lines plus full-cycle wellness facilities create a “green-out-the-window, park-at-your-doorstep” smart habitat.",
         stats: [

@@ -55,9 +55,6 @@ export const WellnessEstatePage = ({ navigate, t }) => {
                 <Button variant="primary" onClick={() => navigate("contact")} className="gap-2">
                   {t.common.btnReserve} <ArrowRight size={16} />
                 </Button>
-                <Button variant="outline" onClick={() => navigate("wellness-living")}>
-                  {t.common.btnBack}
-                </Button>
               </div>
             </div>
             <div className="space-y-4">
